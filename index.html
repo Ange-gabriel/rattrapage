@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner — Le Retour des Ombres</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Partner — Le Retour des Ombres | Duel Culinaire</title>
 <link href="https://fonts.googleapis.com/css2?family=Rye&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 :root{--paper:#f0e6c8;--paper-dark:#e0d0a0;--paper-aged:#d4bc80;--sepia1:#2c1a08;--sepia2:#5c3a18;--sepia3:#8c6030;--sepia4:#c8a060;--gold:#c9a020;--gold-bright:#e8c040;--red:#8b1818;--red-bright:#c02020;--green-bright:#4a9a2a;--bg:#080604;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;min-height:100vh;background:var(--bg);font-family:'Special Elite',cursive;color:var(--sepia1);overflow-x:hidden;cursor:crosshair;}
 body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,0.75)100%);pointer-events:none;z-index:9997;}
 .dust{position:fixed;border-radius:50%;background:var(--sepia4);pointer-events:none;z-index:1;animation:dustFloat linear infinite;opacity:0;}
@@ -54,8 +55,6 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .boss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;width:100%;max-width:700px;}
 .bcard{background:var(--paper);padding:14px 12px 16px;position:relative;border:2px solid var(--sepia2);box-shadow:3px 4px 0 var(--sepia2),6px 8px 20px rgba(0,0,0,0.6);transition:transform 0.25s,box-shadow 0.25s,opacity 0.4s;cursor:not-allowed;opacity:0.28;filter:grayscale(70%);}
 .bcard::before{content:'';position:absolute;inset:5px;border:1px solid rgba(92,58,24,0.22);pointer-events:none;}
-.bcard:nth-child(odd){transform:rotate(-1deg);}
-.bcard:nth-child(even){transform:rotate(0.7deg);}
 .bcard.unlocked{cursor:pointer;opacity:1;filter:none;}
 .bcard.unlocked:hover{transform:translateY(-6px) rotate(-2deg)!important;box-shadow:6px 10px 30px rgba(0,0,0,0.7);z-index:20;}
 .bcard.done{cursor:default;opacity:0.65;filter:grayscale(25%);}
@@ -63,10 +62,8 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .bcard.awaiting:hover{transform:translateY(-4px) rotate(0.5deg)!important;}
 .bcard-nail{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:10px;height:10px;background:radial-gradient(circle at 35% 35%,#e0b84a,#8b6914);border-radius:50%;box-shadow:1px 1px 4px rgba(0,0,0,0.6);z-index:5;}
 .bcard-label{font-family:'Rye',cursive;font-size:8px;text-align:center;letter-spacing:3px;color:var(--sepia1);margin-bottom:5px;border-bottom:1px solid var(--sepia2);padding-bottom:3px;}
-.bcard-recidive{font-size:7px;color:var(--red);letter-spacing:2px;font-style:italic;}
 .bcard-emoji{font-size:40px;display:block;text-align:center;margin:7px 0;filter:sepia(0.3);}
 .bcard-name{font-family:'Rye',cursive;font-size:clamp(11px,2.5vw,15px);text-align:center;color:var(--sepia1);margin-bottom:3px;}
-.bcard-date{font-family:'Josefin Slab',serif;font-size:9px;color:var(--sepia3);text-align:center;letter-spacing:3px;text-transform:uppercase;margin-bottom:5px;}
 .bcard-stars{display:flex;justify-content:center;gap:2px;}
 .bcard-status{font-size:9px;color:var(--gold);text-align:center;margin-top:5px;font-style:italic;letter-spacing:1px;}
 .bcard-stamp{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;z-index:20;transition:opacity 0.3s;}
@@ -127,8 +124,10 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .fb-opt{background:var(--paper-dark);border:2px solid var(--sepia2);padding:8px 13px;cursor:pointer;font-size:12px;color:var(--sepia1);letter-spacing:1px;transition:all 0.2s;text-align:left;}
 .fb-opt:hover{background:var(--paper-aged);border-color:var(--gold);transform:translateX(4px);}
 .fb-opt.selected{background:rgba(201,160,32,0.15);border-color:var(--gold);}
-.fb-submit{padding:10px 26px;font-family:'Rye',cursive;font-size:13px;letter-spacing:3px;background:var(--sepia1);color:var(--paper);border:2px solid var(--gold);cursor:pointer;transition:all 0.2s;margin-top:10px;display:none;}
+.fb-submit{padding:10px 26px;font-family:'Rye',cursive;font-size:13px;letter-spacing:3px;background:var(--sepia1);color:var(--paper);border:2px solid var(--gold);cursor:pointer;transition:all 0.2s;margin-top:10px;}
 .fb-submit:hover{background:var(--gold);color:var(--sepia1);}
+.capture-note{background:rgba(139,24,24,0.08);border-left:3px solid var(--red);border-right:3px solid var(--red);padding:10px 12px;margin-top:16px;font-family:'Josefin Slab',serif;font-size:12px;color:var(--red);letter-spacing:1px;animation:pulseCapture 1.8s infinite;}
+@keyframes pulseCapture{0%,100%{opacity:0.7;}50%{opacity:1;}}
 .gabriel-msg{background:var(--paper);max-width:480px;width:100%;padding:26px 30px;border:2px solid var(--sepia2);position:relative;box-shadow:0 0 60px rgba(0,0,0,0.8);text-align:center;animation:fadeUp 0.6s ease;}
 .gabriel-msg::before{content:'';position:absolute;inset:8px;border:1px solid rgba(92,58,24,0.25);pointer-events:none;}
 .gm-from{font-family:'Josefin Slab',serif;font-size:10px;color:var(--sepia3);letter-spacing:4px;margin-bottom:10px;text-transform:uppercase;}
@@ -150,7 +149,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .fail-box{background:var(--paper);max-width:400px;width:100%;padding:24px 28px;border:3px solid var(--red);position:relative;box-shadow:0 0 60px rgba(139,24,24,0.4);text-align:center;animation:bossAppear 0.4s ease;}
 .fail-box::before{content:'';position:absolute;inset:8px;border:1px solid rgba(139,24,24,0.2);pointer-events:none;}
 
-/* VICTORY */
+/* VICTORY & MENU JAPONAIS */
 #s-victory{background:radial-gradient(ellipse at center,#1a0a00 0%,#050200 100%);}
 .envelope-wrap{display:flex;flex-direction:column;align-items:center;max-width:580px;width:100%;}
 .envelope-outer{width:100%;background:#c8a060;border:2px solid var(--sepia2);position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.8);animation:envDrop 1s ease;}
@@ -169,6 +168,41 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .letter-star{font-size:20px;color:var(--gold);filter:drop-shadow(0 0 6px rgba(201,160,32,0.6));}
 .letter-text{font-size:clamp(13px,2vw,14px);color:var(--sepia1);line-height:2.1;text-align:left;border-top:1px dashed var(--sepia2);border-bottom:1px dashed var(--sepia2);padding:14px 0;margin-bottom:12px;}
 .letter-sig{font-family:'Rye',cursive;font-size:20px;color:var(--gold);text-align:center;}
+
+/* MENU JAPONAIS */
+.japanese-menu-container{background:linear-gradient(145deg,#2c2418 0%,#1a1408 100%);border:8px double #c9a020;border-radius:4px;padding:24px 20px;margin-top:24px;position:relative;box-shadow:0 20px 40px rgba(0,0,0,0.5);font-family:'Noto Serif JP','Georgia',serif;}
+.lantern{position:absolute;top:-12px;right:20px;width:36px;height:48px;background:#c9301a;border-radius:50% 50% 30% 30%;box-shadow:0 0 15px #ff8c42;animation:swingLantern 2.5s ease-in-out infinite;z-index:2;}
+.lantern::before{content:'✨';position:absolute;top:-22px;left:8px;font-size:16px;color:var(--gold);}
+@keyframes swingLantern{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+.menu-title{font-family:'Rye',cursive;font-size:28px;text-align:center;color:var(--gold);letter-spacing:4px;text-shadow:2px 2px 0 #2c1a08;margin-bottom:8px;}
+.menu-sub{text-align:center;color:var(--sepia4);font-size:12px;letter-spacing:4px;margin-bottom:24px;border-bottom:1px solid rgba(201,160,32,0.3);display:inline-block;width:auto;margin-left:auto;margin-right:auto;padding-bottom:6px;}
+.plats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
+.plat-card{background:rgba(240,230,200,0.12);border:1px solid var(--gold);padding:14px 12px;cursor:pointer;transition:all 0.2s;text-align:center;border-radius:8px;}
+.plat-card:hover{background:rgba(201,160,32,0.2);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.plat-emoji{font-size:32px;display:block;margin-bottom:6px;}
+.plat-name{font-size:15px;font-weight:bold;color:var(--gold);letter-spacing:1px;}
+.plat-desc{font-size:10px;color:var(--sepia4);margin-top:4px;}
+.ticket-area{background:var(--paper);padding:14px;border:2px dashed var(--sepia2);margin-bottom:20px;min-height:100px;font-family:'Special Elite',cursive;transition:all 0.3s;}
+.ticket-title{font-size:12px;color:var(--red);letter-spacing:3px;border-bottom:1px solid var(--sepia2);margin-bottom:8px;}
+.ticket-content{font-size:13px;color:var(--sepia1);min-height:60px;}
+.ticket-stamp{display:inline-block;background:var(--red);color:var(--paper);font-size:9px;padding:2px 6px;margin-top:8px;transform:rotate(-8deg);font-family:'Rye',cursive;}
+.autre-champ{width:100%;padding:8px;background:var(--paper-dark);border:1px solid var(--gold);margin-top:10px;font-family:inherit;display:none;}
+.valider-btn{background:var(--sepia1);color:var(--gold);border:2px solid var(--gold);font-family:'Rye',cursive;font-size:16px;letter-spacing:4px;padding:12px 20px;width:100%;cursor:pointer;transition:all 0.3s;}
+.valider-btn:hover{background:var(--gold);color:var(--sepia1);}
+.cuisine-animation{text-align:center;padding:20px;background:rgba(0,0,0,0.7);border-radius:8px;margin:15px 0;}
+.cooking-chicken{font-size:54px;display:inline-block;animation:rotateChicken 0.8s linear infinite;}
+@keyframes rotateChicken{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.steam{font-size:30px;animation:steamRise 1s ease-out infinite;display:inline-block;margin-left:10px;}
+@keyframes steamRise{0%{opacity:0;transform:translateY(10px);}50%{opacity:1;}100%{opacity:0;transform:translateY(-20px);}}
+.countdown-circle{width:80px;height:80px;border-radius:50%;border:4px solid var(--gold);margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:38px;font-family:'Rye',cursive;color:var(--red);}
+.final-message{text-align:center;animation:finalFadeIn 1s;}
+.final-jp{font-size:42px;font-family:'Noto Serif JP',serif;color:#f5e6b0;margin:20px 0;text-shadow:3px 3px 0 #3a2208;}
+.final-message div:not(.final-jp){color:#f5e6b0;font-weight:bold;background:rgba(0,0,0,0.5);display:inline-block;padding:6px 12px;border-radius:8px;margin:10px auto;}
+.final-capture{background:#f0e6c8;border:3px solid #c9a020;padding:18px;margin-top:25px;border-radius:16px;box-shadow:0 0 20px rgba(201,160,32,0.3);}
+.final-capture div:first-child{font-size:32px;margin-bottom:8px;}
+.final-capture div:not(:first-child){color:#2c1a08;font-size:14px;font-family:'Special Elite',cursive;}
+.final-capture div:not(:first-child) a, 
+.final-capture div:not(:first-child) span{color:#2c1a08;font-weight:bold;}
 .conf{position:fixed;pointer-events:none;z-index:9500;animation:confFall linear forwards;border-radius:1px;}
 @keyframes confFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
 @media(max-width:560px){
@@ -178,7 +212,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
   .envelope-flap{border-left-width:180px;border-right-width:180px;border-top-width:100px;}
   .answers-grid{grid-template-columns:1fr;}
   .boss-grid{grid-template-columns:1fr 1fr;}
-  .duel-card{padding:12px;}
+  .plats-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -196,58 +230,30 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
     <div class="rule">— ✦ —</div>
     <div id="tw-text"><span class="tw-cursor"></span></div>
     <div class="rule" id="rule2" style="opacity:0;margin-top:12px;">— ✦ —</div>
-    <div id="cd-wrap">
-      <div class="cd-label">RETOUR EN VILLE DANS</div>
-      <div id="cd-n">5</div>
-      <div class="cd-bar-wrap"><div class="cd-bar" id="cd-bar"></div></div>
-    </div>
+    <div id="cd-wrap"><div class="cd-label">RETOUR EN VILLE DANS</div><div id="cd-n">5</div><div class="cd-bar-wrap"><div class="cd-bar" id="cd-bar"></div></div></div>
   </div>
 </div>
 
 <!-- TOWN -->
 <div id="s-town" class="screen">
-  <div class="town-top">
-    <div class="town-name">VILLE DE PI</div>
-    <div class="town-sub">— Acte II · Le Rattrapage —</div>
-  </div>
+  <div class="town-top"><div class="town-name">VILLE DE PI</div><div class="town-sub">— Acte II · Le Rattrapage —</div></div>
   <div class="town-notice">⚠ AVIS DE RETOUR — Ils ont survécu. Ils ont appris. Ils sont de retour. ⚠</div>
-  <div class="town-hud">
-    <div class="hud-item">🏅 <span>PARTNER</span></div>
-    <div class="hud-item">✒️ Partner's Excalibur</div>
-    <div class="hud-item">Récidivistes neutralisés : <span id="hud-beaten">0</span>/4</div>
-  </div>
+  <div class="town-hud"><div class="hud-item">🏅 <span>PARTNER</span></div><div class="hud-item">✒️ L'Encre de Gabriel</div><div class="hud-item">Récidivistes neutralisés : <span id="hud-beaten">0</span>/4</div></div>
   <div class="boss-grid" id="boss-grid"></div>
 </div>
 
 <!-- DUEL -->
 <div id="s-duel" class="screen">
   <div class="duel-wrap">
-    <div class="duel-hud">
-      <div class="duel-hud-name" id="duel-name">DUEL</div>
-      <div class="duel-lives" id="duel-lives"></div>
-      <div class="duel-prog" id="duel-prog">0/? ✓</div>
-      <button class="joker-btn" id="joker-btn">💀 JOKER</button>
-    </div>
-    <div class="duel-card" id="duel-card-el">
-      <div class="duel-card-nail"></div>
-      <div class="dc-recidive">✦ RÉCIDIVISTE ✦</div>
-      <div class="dc-top">WANTED — RETOUR</div>
-      <span class="dc-emoji" id="dc-emoji"></span>
-      <div class="dc-name" id="dc-name-el"></div>
-      <div class="dc-alias" id="dc-alias"></div>
-      <div class="dc-quote" id="dc-quote"></div>
-    </div>
+    <div class="duel-hud"><div class="duel-hud-name" id="duel-name">DUEL</div><div class="duel-lives" id="duel-lives"></div><div class="duel-prog" id="duel-prog">0/? ✓</div><button class="joker-btn" id="joker-btn">💀 JOKER</button></div>
+    <div class="duel-card"><div class="duel-card-nail"></div><div class="dc-recidive">✦ RÉCIDIVISTE ✦</div><div class="dc-top">WANTED — RETOUR</div><span class="dc-emoji" id="dc-emoji"></span><div class="dc-name" id="dc-name-el"></div><div class="dc-alias" id="dc-alias"></div><div class="dc-quote" id="dc-quote"></div></div>
     <div class="section-label" id="section-label">Section</div>
     <div class="enonce-box" id="enonce-box" style="display:none;"></div>
-    <div class="qbox">
-      <div class="q-num" id="q-num"></div>
-      <div class="q-text" id="q-text"></div>
-      <div class="answers-grid" id="answers-grid"></div>
-    </div>
+    <div class="qbox"><div class="q-num" id="q-num"></div><div class="q-text" id="q-text"></div><div class="answers-grid" id="answers-grid"></div></div>
   </div>
 </div>
 
-<!-- VICTORY -->
+<!-- VICTORY + MENU JAPONAIS -->
 <div id="s-victory" class="screen">
   <div class="envelope-wrap">
     <div class="envelope-outer">
@@ -270,6 +276,8 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
           </div>
           <div class="letter-sig">LYP 💛</div>
         </div>
+        <!-- MENU JAPONAIS sera injecté ici après ouverture -->
+        <div id="japanese-menu-root"></div>
       </div>
     </div>
   </div>
@@ -277,467 +285,201 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 
 <script>
 // ══════════════════════════════════════════════════
-//  BOSS DATA
+//  BOSS DATA (identique à la version fonctionnelle)
 // ══════════════════════════════════════════════════
 const BOSSES = [
-{
-  id:0, name:"Analyse", alias:'"La Série Infinie — Revanche"', emoji:"∫", prime:7, date:"Demain",
-  quote:'"Tu croyais m\'avoir neutralisée ? Les séries convergent toujours vers leur vengeance."',
-  defeatPhrase:"Rayon de convergence... nul. Je tombe. Pour de bon cette fois.",
-  noShuffle: true,
+{ id:0, name:"Analyse", alias:'"La Série Infinie — Revanche"', emoji:"∫", prime:7, date:"Demain", quote:'"Tu croyais m\'avoir neutralisée ? Les séries convergent toujours vers leur vengeance."', defeatPhrase:"Rayon de convergence... nul. Je tombe. Pour de bon cette fois.", noShuffle: true,
   questions:[
-    // ── Sous-section 1 : Rayon de convergence ──
-    {section:"🔹 Rayon de convergence", enonce:null,
-     q:"Quel est le rayon de convergence de la série entière Σ n² xⁿ ?",
-     a:["0","1","2","+∞"], ans:1},
-    {section:"🔹 Rayon de convergence", enonce:null,
-     q:"Quel est le rayon de convergence de la série entière Σ xⁿ/n! ?",
-     a:["0","1","e","+∞"], ans:3},
-    {section:"🔹 Rayon de convergence", enonce:null,
-     q:"Quel est le rayon de convergence de Σ (n!/nⁿ) xⁿ ? (Rappel : nⁿ/n! → eⁿ par équivalent de Stirling)",
-     a:["1","1/e","e","+∞"], ans:2},
-    // ── Sous-section 2 : Convergence simple/uniforme/normale ──
-    {section:"🔹 Convergence simple, uniforme, normale", enonce:null,
-     q:"La suite fₙ(x) = xⁿ sur [0,1]. Quelle est la nature de sa convergence ?",
-     a:["Convergence uniforme vers 0 sur [0,1]","Convergence simple vers 0 sur [0,1[ et vers 1 en x=1, mais pas uniforme sur [0,1]","Convergence normale sur [0,1]","Divergence pour tout x"], ans:1},
-    {section:"🔹 Convergence simple, uniforme, normale", enonce:null,
-     q:"Pour fₙ(x) = nx(1-x²)ⁿ sur [0,1], la convergence vers 0 est-elle uniforme ?",
-     a:["Oui, uniforme","Non — le maximum vaut n/(2(n+1))·(n/(n+1))ⁿ → 1/(2e) ≠ 0, donc pas uniforme","Oui, car fₙ→0 simplement","Oui, car la série Σ‖fₙ‖∞ converge"], ans:1},
-    {section:"🔹 Convergence simple, uniforme, normale", enonce:null,
-     q:"fₙ(x) = x/(1+nx) sur ]0,+∞[. Sur quel domaine la convergence vers 0 est-elle uniforme ?",
-     a:["Sur ]0,+∞[ tout entier","Sur [a,+∞[ pour tout a > 0, car sup_{x≥a} fₙ(x) ≤ 1/(na) → 0","Sur ]0,1[ uniquement","La suite ne converge pas"], ans:1},
-    // ── Sous-section 3 : Dérivation/intégration terme à terme ──
-    {section:"🔹 Dérivation et intégration terme à terme", enonce:null,
-     q:"Pour fₙ(x) = sin(nx)/√n, la suite (fₙ') = √n·cos(nx) converge-t-elle simplement ?",
-     a:["Oui, vers 0 uniformément","Non — ‖fₙ'‖∞ = √n → +∞, donc (fₙ') ne converge même pas simplement pour la plupart des x","Oui, vers cos(x)","Oui, vers 0 simplement"], ans:1},
-    {section:"🔹 Dérivation et intégration terme à terme", enonce:null,
-     q:"Pour intervertir Σ et ∫₀¹ dans Σ∫₀¹ fₙ(x)dx, quelle condition suffit ?",
-     a:["La convergence simple de Σfₙ","La convergence uniforme de la série Σfₙ sur [0,1]","Que chaque fₙ soit intégrable","Que Σ fₙ(0) converge"], ans:1},
-    // ── Sous-section 4 : Développements en séries usuelles ──
-    {section:"🔹 Séries usuelles et développements", enonce:null,
-     q:"Le développement en série entière de cos(x) en 0 est :",
-     a:["Σ xⁿ/n!","Σ (-1)ⁿ x²ⁿ/(2n)!","Σ (-1)ⁿ x²ⁿ⁺¹/(2n+1)!","Σ xⁿ"], ans:1},
-    {section:"🔹 Séries usuelles et développements", enonce:null,
-     q:"Le développement de ln(1+x) en 0 (|x|<1) est :",
-     a:["Σ xⁿ/n!","Σ (-1)ⁿ⁺¹ xⁿ/n (n≥1)","Σ (-1)ⁿ xⁿ","Σ xⁿ/(n+1)"], ans:1},
-    // ── Sous-section 5 : Intégrale à paramètre ──
-    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null,
-     q:"F(x) = ∫₀^{π/2} ln(cos²t + x²sin²t) dt. En dérivant sous le signe intégrale, F'(x) vaut :",
-     a:["∫₀^{π/2} ln(x) dt","∫₀^{π/2} 2x·sin²t / (cos²t + x²sin²t) dt","∫₀^{π/2} 2x / (cos²t + x²sin²t) dt","∫₀^{π/2} sin²t dt"], ans:1},
-    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null,
-     q:"Après le changement u = tan(t), F'(x) devient :",
-     a:["2x ∫₀^∞ 1/(1+u²) du","2x ∫₀^∞ u²/((1+u²)(1+x²u²)) du","2 ∫₀^∞ 1/((1+u²)(x+u)) du","∫₀^∞ x/(1+x²u²) du"], ans:1},
-    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null,
-     q:"Dans la décomposition partielle de u²/((1+u²)(1+x²u²)), le coefficient A devant 1/(1+u²) vaut :",
-     a:["1/(x²-1)","x²/(x²-1)","1","−1/(x²-1)"], ans:0},
-    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null,
-     q:"Après intégration de F'(x), on obtient (pour x > 0) :",
-     a:["F'(x) = π·x","F'(x) = π/(x+1)","F'(x) = π·ln(x)","F'(x) = 2π/x"], ans:1},
-    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null,
-     q:"En utilisant F(0) = ∫₀^{π/2} ln(cos²t) dt = −π·ln2 pour déterminer la constante C, on obtient finalement :",
-     a:["F(x) = π·ln(x+1)","F(x) = π·ln((x+1)/2)","F(x) = π·ln(x)","F(x) = π·(x+1)/2"], ans:1}
+    {section:"🔹 Rayon de convergence", enonce:null, q:"Quel est le rayon de convergence de la série entière Σ n² xⁿ ?", a:["0","1","2","+∞"], ans:1},
+    {section:"🔹 Rayon de convergence", enonce:null, q:"Quel est le rayon de convergence de la série entière Σ xⁿ/n! ?", a:["0","1","e","+∞"], ans:3},
+    {section:"🔹 Rayon de convergence", enonce:null, q:"Quel est le rayon de convergence de Σ (n!/nⁿ) xⁿ ? (Rappel : nⁿ/n! → eⁿ par équivalent de Stirling)", a:["1","1/e","e","+∞"], ans:2},
+    {section:"🔹 Convergence simple, uniforme, normale", enonce:null, q:"La suite fₙ(x) = xⁿ sur [0,1]. Quelle est la nature de sa convergence ?", a:["Convergence uniforme vers 0 sur [0,1]","Convergence simple vers 0 sur [0,1[ et vers 1 en x=1, mais pas uniforme sur [0,1]","Convergence normale sur [0,1]","Divergence pour tout x"], ans:1},
+    {section:"🔹 Convergence simple, uniforme, normale", enonce:null, q:"Pour fₙ(x) = nx(1-x²)ⁿ sur [0,1], la convergence vers 0 est-elle uniforme ?", a:["Oui, uniforme","Non — le maximum vaut n/(2(n+1))·(n/(n+1))ⁿ → 1/(2e) ≠ 0, donc pas uniforme","Oui, car fₙ→0 simplement","Oui, car la série Σ‖fₙ‖∞ converge"], ans:1},
+    {section:"🔹 Convergence simple, uniforme, normale", enonce:null, q:"fₙ(x) = x/(1+nx) sur ]0,+∞[. Sur quel domaine la convergence vers 0 est-elle uniforme ?", a:["Sur ]0,+∞[ tout entier","Sur [a,+∞[ pour tout a > 0, car sup_{x≥a} fₙ(x) ≤ 1/(na) → 0","Sur ]0,1[ uniquement","La suite ne converge pas"], ans:1},
+    {section:"🔹 Dérivation et intégration terme à terme", enonce:null, q:"Pour fₙ(x) = sin(nx)/√n, la suite (fₙ') = √n·cos(nx) converge-t-elle simplement ?", a:["Oui, vers 0 uniformément","Non — ‖fₙ'‖∞ = √n → +∞, donc (fₙ') ne converge même pas simplement pour la plupart des x","Oui, vers cos(x)","Oui, vers 0 simplement"], ans:1},
+    {section:"🔹 Dérivation et intégration terme à terme", enonce:null, q:"Pour intervertir Σ et ∫₀¹ dans Σ∫₀¹ fₙ(x)dx, quelle condition suffit ?", a:["La convergence simple de Σfₙ","La convergence uniforme de la série Σfₙ sur [0,1]","Que chaque fₙ soit intégrable","Que Σ fₙ(0) converge"], ans:1},
+    {section:"🔹 Séries usuelles et développements", enonce:null, q:"Le développement en série entière de cos(x) en 0 est :", a:["Σ xⁿ/n!","Σ (-1)ⁿ x²ⁿ/(2n)!","Σ (-1)ⁿ x²ⁿ⁺¹/(2n+1)!","Σ xⁿ"], ans:1},
+    {section:"🔹 Séries usuelles et développements", enonce:null, q:"Le développement de ln(1+x) en 0 (|x|<1) est :", a:["Σ xⁿ/n!","Σ (-1)ⁿ⁺¹ xⁿ/n (n≥1)","Σ (-1)ⁿ xⁿ","Σ xⁿ/(n+1)"], ans:1},
+    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"F(x) = ∫₀^{π/2} ln(cos²t + x²sin²t) dt. En dérivant sous le signe intégrale, F'(x) vaut :", a:["∫₀^{π/2} ln(x) dt","∫₀^{π/2} 2x·sin²t / (cos²t + x²sin²t) dt","∫₀^{π/2} 2x / (cos²t + x²sin²t) dt","∫₀^{π/2} sin²t dt"], ans:1},
+    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"Après le changement u = tan(t), F'(x) devient :", a:["2x ∫₀^∞ 1/(1+u²) du","2x ∫₀^∞ u²/((1+u²)(1+x²u²)) du","2 ∫₀^∞ 1/((1+u²)(x+u)) du","∫₀^∞ x/(1+x²u²) du"], ans:1},
+    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"Dans la décomposition partielle de u²/((1+u²)(1+x²u²)), le coefficient A devant 1/(1+u²) vaut :", a:["1/(x²-1)","x²/(x²-1)","1","−1/(x²-1)"], ans:0},
+    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"Après intégration de F'(x), on obtient (pour x > 0) :", a:["F'(x) = π·x","F'(x) = π/(x+1)","F'(x) = π·ln(x)","F'(x) = 2π/x"], ans:1},
+    {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"En utilisant F(0) = ∫₀^{π/2} ln(cos²t) dt = −π·ln2 pour déterminer la constante C, on obtient finalement :", a:["F(x) = π·ln(x+1)","F(x) = π·ln((x+1)/2)","F(x) = π·ln(x)","F(x) = π·(x+1)/2"], ans:1}
   ],
-  feedbackMessages:{
-    "bien-high":"WAIT. >16 ?! 😭😭 Partner je savais que t'étais forte mais là tu m'as mis une claque. Franchement chapeau bas. Partner's Excalibur a bien travaillé. 🥲",
-    "bien-mid":"12-16 c'est solide ! Tu vois ? J'avais dit que tu pouvais. Stop stresser, t'es clairement au-dessus du lot. Proud of you fr. 😁",
-    "bien-low":"Okay 8-12 c'est correct, surtout en analyse rattrapage. L'important c'est de passer. Et toi tu passes. Point final. 💛",
-    "moyen-high":"Tu dis 'moyen' mais >16 ? Partner t'as un problème de perception de toi-même là 😂. C'est très bien. Arrête de minimiser.",
-    "moyen-mid":"Moyen et 12-16... bah c'est une bonne note ça non ? T'es trop dure avec toi-même. On s'en sort. Toujours. 🥹",
-    "moyen-low":"C'est pas grave si c'était difficile. 8-12 en analyse rattrapage ça reste honorable. On surmontera ça ensemble comme d'hab. 💛",
-    "difficile-high":"Difficile mais >16 ?! Tu vois c'est ça Partner — même quand ça semble impossible pour toi, tu te surpasses. Incredible. 😭",
-    "difficile-mid":"C'était dur, 12-16... mais t'as tenu. C'est ça qui compte. T'aurais pu abandonner, t'as pas abandonné. That's you. 💪",
-    "difficile-low":"Heyy. Respire. C'était dur et c'est okay. <12 c'est pas la fin du monde. On regarde la suite ensemble. LYP. 🥹💛"
-  }
+  feedbackMessages:{"bien-high":"WAIT. >16 ?! 😭😭 Partner je savais que t'étais forte mais là tu m'as mis une claque.","bien-mid":"12-16 c'est solide ! Tu vois ? J'avais dit que tu pouvais.","bien-low":"Okay 8-12 c'est correct, surtout en analyse rattrapage.","moyen-high":"Tu dis 'moyen' mais >16 ? Partner t'as un problème de perception de toi-même là 😂","moyen-mid":"Moyen et 12-16... bah c'est une bonne note ça non ?","moyen-low":"C'est pas grave si c'était difficile. 8-12 en analyse rattrapage ça reste honorable.","difficile-high":"Difficile mais >16 ?! Tu vois c'est ça Partner — même quand ça semble impossible pour toi, tu te surpasses.","difficile-mid":"C'était dur, 12-16... mais t'as tenu. C'est ça qui compte.","difficile-low":"Heyy. Respire. C'était dur et c'est okay. <12 c'est pas la fin du monde."}
 },
-{
-  id:1, name:"Algèbre", alias:'"Le Démon des Matrices — Revanche"', emoji:"𝔸", prime:6, date:"Jeudi",
-  quote:'"J\'ai diagonalisé ma défaite. Cette fois, c\'est moi qui décompose."',
-  defeatPhrase:"Ma matrice est réduite... par toi. L'orthonormalisation de Gram-Schmidt a eu raison de moi.",
-  noShuffle: true,
+{ id:1, name:"Algèbre", alias:'"Le Démon des Matrices — Revanche"', emoji:"𝔸", prime:6, date:"Jeudi", quote:'"J\'ai diagonalisé ma défaite. Cette fois, c\'est moi qui décompose."', defeatPhrase:"Ma matrice est réduite... par toi.", noShuffle: true,
   questions:[
-    // ── Intégrales doubles ──
-    {section:"🔹 Intégrales doubles", enonce:null,
-     q:"Calculer ∬_{[0,1]²} xy dxdy.",
-     a:["1/2","1/4","1/8","1"], ans:1},
-    {section:"🔹 Intégrales doubles", enonce:null,
-     q:"∫₀¹ ∫_{x²}^{x} dy dx représente l'aire de quelle région ?",
-     a:["Le carré [0,1]²","La région comprise entre y = x² et y = x (pour x ∈ [0,1])","Le triangle de sommets (0,0),(1,0),(1,1)","La région y ≥ x sur [0,1]²"], ans:1},
-    {section:"🔹 Intégrales doubles", enonce:null,
-     q:"En passant en coordonnées polaires, ∬_{x²+y²≤1, x,y≥0} (x²+y²) dxdy vaut :",
-     a:["π/4","π/8","π/2","1/4"], ans:1},
-    // ── Intégrales triples ──
-    {section:"🔹 Intégrales triples", enonce:null,
-     q:"Le volume de la boule de rayon R calculé par intégrale triple en coordonnées sphériques vaut :",
-     a:["πR³","2πR³/3","4πR³/3","4πR²"], ans:2},
-    {section:"🔹 Intégrales triples", enonce:null,
-     q:"∭_{x²+y²≤1, 0≤z≤1} z dxdydz vaut :",
-     a:["π/4","π/2","π","1/2"], ans:1},
-    // ── EDP : x∂f/∂x + y∂f/∂y = x²+y² ──
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"Avec u = x²+y², v = y/x, l'expression de ∂f/∂x en termes de f_u et f_v est :",
-     a:["2y·f_u + (1/x)·f_v","2x·f_u − (y/x²)·f_v","f_u + f_v","(2x+y)·f_u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"L'expression de ∂f/∂y en termes de f_u et f_v est :",
-     a:["2x·f_u − (y/x²)·f_v","2y·f_u + (1/x)·f_v","f_u − f_v","y·f_u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"On calcule x·f_x + y·f_y. Le résultat en fonction de u et des dérivées de f est :",
-     a:["(x²+y²)·f_u","2(x²+y²)·f_u = 2u·f_u","u·f_v","f_u + f_v"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"L'EDP x·f_x + y·f_y = x²+y² devient, dans les variables (u,v) :",
-     a:["f_u + f_v = u","2u·f_u = u, soit f_u = 1/2","u·f_u = 1","2f_u = 1/u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"En intégrant f_u = 1/2 par rapport à u (v fixé), on obtient :",
-     a:["f(u,v) = 2u + g(v)","f(u,v) = u/2 + g(v)","f(u,v) = u²/4 + g(v)","f(u,v) = g(v)"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"En revenant aux variables (x,y), la solution générale de l'EDP est :",
-     a:["f(x,y) = x²+y² + h(y/x)","f(x,y) = (x²+y²)/2 + h(y/x)","f(x,y) = (x+y)/2 + h(xy)","f(x,y) = x²y² + h(x)"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null,
-     q:"Vérification avec h = 0 : f(x,y) = (x²+y²)/2. Calculer x·f_x + y·f_y :",
-     a:["x²+y²/2","x+y","x²+y²","(x²+y²)²/4"], ans:2},
-    // ── Gram-Schmidt ──
-    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null,
-     q:"Dans L²([-1,1]) muni du produit scalaire ⟨f,g⟩ = ∫_{-1}^{1} f(x)g(x)dx, quel est ⟨1, x⟩ ?",
-     a:["1","2","0","1/3"], ans:2},
-    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null,
-     q:"Le procédé de Gram-Schmidt, appliqué à une famille libre, permet de construire :",
-     a:["Une base quelconque du même espace","Une base orthonormée (vecteurs deux à deux orthogonaux, de norme 1)","Une base propre d'un opérateur","Une base de dimension inférieure"], ans:1}
+    {section:"🔹 Intégrales doubles", enonce:null, q:"Calculer ∬_{[0,1]²} xy dxdy.", a:["1/2","1/4","1/8","1"], ans:1},
+    {section:"🔹 Intégrales doubles", enonce:null, q:"∫₀¹ ∫_{x²}^{x} dy dx représente l'aire de quelle région ?", a:["Le carré [0,1]²","La région comprise entre y = x² et y = x (pour x ∈ [0,1])","Le triangle de sommets (0,0),(1,0),(1,1)","La région y ≥ x sur [0,1]²"], ans:1},
+    {section:"🔹 Intégrales doubles", enonce:null, q:"En passant en coordonnées polaires, ∬_{x²+y²≤1, x,y≥0} (x²+y²) dxdy vaut :", a:["π/4","π/8","π/2","1/4"], ans:1},
+    {section:"🔹 Intégrales triples", enonce:null, q:"Le volume de la boule de rayon R calculé par intégrale triple en coordonnées sphériques vaut :", a:["πR³","2πR³/3","4πR³/3","4πR²"], ans:2},
+    {section:"🔹 Intégrales triples", enonce:null, q:"∭_{x²+y²≤1, 0≤z≤1} z dxdydz vaut :", a:["π/4","π/2","π","1/2"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"Avec u = x²+y², v = y/x, l'expression de ∂f/∂x en termes de f_u et f_v est :", a:["2y·f_u + (1/x)·f_v","2x·f_u − (y/x²)·f_v","f_u + f_v","(2x+y)·f_u"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"L'expression de ∂f/∂y en termes de f_u et f_v est :", a:["2x·f_u − (y/x²)·f_v","2y·f_u + (1/x)·f_v","f_u − f_v","y·f_u"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"On calcule x·f_x + y·f_y. Le résultat en fonction de u et des dérivées de f est :", a:["(x²+y²)·f_u","2(x²+y²)·f_u = 2u·f_u","u·f_v","f_u + f_v"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"L'EDP x·f_x + y·f_y = x²+y² devient, dans les variables (u,v) :", a:["f_u + f_v = u","2u·f_u = u, soit f_u = 1/2","u·f_u = 1","2f_u = 1/u"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"En intégrant f_u = 1/2 par rapport à u (v fixé), on obtient :", a:["f(u,v) = 2u + g(v)","f(u,v) = u/2 + g(v)","f(u,v) = u²/4 + g(v)","f(u,v) = g(v)"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"En revenant aux variables (x,y), la solution générale de l'EDP est :", a:["f(x,y) = x²+y² + h(y/x)","f(x,y) = (x²+y²)/2 + h(y/x)","f(x,y) = (x+y)/2 + h(xy)","f(x,y) = x²y² + h(x)"], ans:1},
+    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"Vérification avec h = 0 : f(x,y) = (x²+y²)/2. Calculer x·f_x + y·f_y :", a:["x²+y²/2","x+y","x²+y²","(x²+y²)²/4"], ans:2},
+    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null, q:"Dans L²([-1,1]) muni du produit scalaire ⟨f,g⟩ = ∫_{-1}^{1} f(x)g(x)dx, quel est ⟨1, x⟩ ?", a:["1","2","0","1/3"], ans:2},
+    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null, q:"Le procédé de Gram-Schmidt, appliqué à une famille libre, permet de construire :", a:["Une base quelconque du même espace","Une base orthonormée (vecteurs deux à deux orthogonaux, de norme 1)","Une base propre d'un opérateur","Une base de dimension inférieure"], ans:1}
   ],
-  feedbackMessages:{
-    "bien-high":"Partner >16 en algèbre rattrapage 😭. Les matrices te respectent maintenant. Je suis trop fier. Honnêtement.",
-    "bien-mid":"12-16 en algèbre c'est bien géré ! Les valeurs propres n'ont pas eu raison de toi. Bien joué. 😄",
-    "bien-low":"8-12, c'est passé. C'est l'essentiel. T'as pas laissé les matrices t'intimider. Respect. 💛",
-    "moyen-high":"T'appelles ça 'moyen' et c'est >16 ? Partner... 😂 Laisse tomber, t'as cartonné.",
-    "moyen-mid":"Moyen pour toi = 12-16 pour les autres. Stop être dure. T'as bien fait. 🙂",
-    "moyen-low":"C'était compliqué mais 8-12 ça passe. On est là. Suivant ! 💛",
-    "difficile-high":"Difficile et >16 quand même. Voilà qui tu es. Quelqu'un qui sort des points même quand c'est dur. 😤",
-    "difficile-mid":"C'était dur, 12-16, et tu t'en sors quand même. Chapeau vraiment. 🥹",
-    "difficile-low":"C'était hard. C'est okay. <12 ça arrive. On voit Méca maintenant et on avance. Together. 💛"
-  }
+  feedbackMessages:{"bien-high":"Partner >16 en algèbre rattrapage 😭. Les matrices te respectent maintenant.","bien-mid":"12-16 en algèbre c'est bien géré !","bien-low":"8-12, c'est passé. C'est l'essentiel.","moyen-high":"T'appelles ça 'moyen' et c'est >16 ?","moyen-mid":"Moyen pour toi = 12-16 pour les autres.","moyen-low":"C'était compliqué mais 8-12 ça passe.","difficile-high":"Difficile et >16 quand même. Voilà qui tu es.","difficile-mid":"C'était dur, 12-16, et tu t'en sors quand même.","difficile-low":"C'était hard. C'est okay. <12 ça arrive."}
 },
-{
-  id:2, name:"Méca", alias:'"Le Tyran Thermique — Revanche"', emoji:"⚙️", prime:5, date:"Jeudi",
-  quote:'"Les cycles thermodynamiques m\'ont rendu plus fort. Tu résisteras au second principe ?"',
-  defeatPhrase:"L'équilibre thermique final m'a eu. La chaleur latente ne m'a pas sauvé.",
-  noShuffle: true,
+{ id:2, name:"Méca", alias:'"Le Tyran Thermique — Revanche"', emoji:"⚙️", prime:5, date:"Jeudi", quote:'"Les cycles thermodynamiques m\'ont rendu plus fort."', defeatPhrase:"L'équilibre thermique final m'a eu.", noShuffle: true,
   questions:[
-    // ── Cycle thermodynamique ──
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", 
-     enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Cycle</div>Une mole de gaz parfait est à l'état initial : P₀ = 2×10⁵ Pa, V₀ = 14 L. On lui fait subir :<br>① Détente isobare jusqu'à doubler le volume<br>② Compression isotherme retour à V₀<br>③ Refroidissement isochore retour à l'état initial",
-     q:"① Détente isobare : le volume passe de V₀ à V₁. Quelle est la valeur de V₁ ?",
-     a:["7 L","14 L","21 L","28 L"], ans:3},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Après la détente isobare (P = P₀, V passe de V₀ à 2V₀), la température T₁ vaut (loi des gaz parfaits PV = nRT) :",
-     a:["T₀/2","T₀","2T₀","4T₀"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"② La compression isotherme ramène le volume de 2V₀ à V₀. Durant cette transformation, la température est :",
-     a:["T₀","T₁ = 2T₀ (constante tout au long)","(T₀ + T₁)/2","Variable"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Après la compression isotherme (T = T₁ = 2T₀, V revient à V₀), la pression P₂ vaut :",
-     a:["P₀/2","P₀","2P₀","4P₀"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Le travail de la détente isobare ① (W = P·ΔV, P = P₀, ΔV = V₀) vaut :",
-     a:["−P₀V₀ (reçu par le gaz, qui se détend)","P₀V₀ (fourni par le gaz)","P₀V₀/2","2P₀V₀"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Le travail de la compression isotherme ② (W = −nRT₁·ln(V₀/2V₀) = nRT₁·ln2) reçu par le gaz vaut :",
-     a:["nRT₀·ln2","−nRT₁·ln2 (travail négatif, le gaz est comprimé)","nRT₁·ln2","−nRT₀/2"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Le travail total du cycle W_cycle = W₁ + W₂ + W₃ (W₃ = 0, isochore) est :",
-     a:["0","P₀V₀ − nRT₁·ln2","P₀V₀ + nRT₀·ln2","2P₀V₀"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Sur un cycle complet, le premier principe donne ΔU = 0. Donc la chaleur échangée Q_total vaut :",
-     a:["0","W_total","−W_total","2W_total"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null,
-     q:"Dans un diagramme (P,V), une transformation isochore (volume constant) se représente par :",
-     a:["Une courbe hyperbolique","Une droite horizontale","Une droite verticale","Une parabole"], ans:2},
-    // ── Changements d'état ──
-    {section:"🔹 Changements d'état — Glace et eau",
-     enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Changements d'état</div>On place m_glace = 4 kg de glace à −27°C dans V_eau = 15 L d'eau à 100°C.<br>Données : c_glace = 2100 J/(kg·K), c_eau = 4185 J/(kg·K), L_fusion = 334 000 J/kg, ρ_eau = 1 kg/L.",
-     q:"Q₁ = énergie pour chauffer 4 kg de glace de −27°C à 0°C. Q₁ = m·c_glace·ΔT = ?",
-     a:["113 400 J","226 800 J","453 600 J","56 700 J"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null,
-     q:"Q₂ = énergie pour faire fondre totalement 4 kg de glace à 0°C. Q₂ = m·L_fusion = ?",
-     a:["334 000 J","668 000 J","1 336 000 J","83 500 J"], ans:2},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null,
-     q:"Q₃ = énergie cédée par 15 kg d'eau en refroidissant de 100°C à 0°C. Q₃ = m_eau·c_eau·100 = ?",
-     a:["418 500 J","6 277 500 J","4 185 000 J","627 750 J"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null,
-     q:"L'eau chaude (Q₃ ≈ 6,28 MJ) doit fournir Q₁ + Q₂ ≈ 1,56 MJ pour fondre toute la glace. L'eau chaude est-elle suffisante ?",
-     a:["Non, il manque de l'énergie","Oui, Q₃ >> Q₁ + Q₂, toute la glace fond et il reste de l'énergie","On ne peut pas conclure","Juste suffisante, Q₃ = Q₁ + Q₂"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null,
-     q:"À l'équilibre (toute la glace fondue), la température T_eq vérifie l'équation de bilan d'énergie. En résolvant : m_eau·c_eau·(100 − T_eq) = m_glace·[c_glace·27 + L_fusion + c_eau·T_eq], on obtient T_eq ≈ :",
-     a:["0°C","20°C","59,3°C","100°C"], ans:2}
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Cycle</div>Une mole de gaz parfait : P₀ = 2×10⁵ Pa, V₀ = 14 L. ① Détente isobare double volume ② Compression isotherme retour V₀ ③ Refroidissement isochore retour", q:"① Détente isobare : le volume passe de V₀ à V₁. Quelle est la valeur de V₁ ?", a:["7 L","14 L","21 L","28 L"], ans:3},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Après la détente isobare, la température T₁ vaut (loi des gaz parfaits) :", a:["T₀/2","T₀","2T₀","4T₀"], ans:2},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"② La compression isotherme ramène le volume de 2V₀ à V₀. Durant cette transformation, la température est :", a:["T₀","T₁ = 2T₀ (constante tout au long)","(T₀ + T₁)/2","Variable"], ans:1},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Après la compression isotherme, la pression P₂ vaut :", a:["P₀/2","P₀","2P₀","4P₀"], ans:2},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail de la détente isobare (W = P·ΔV) vaut :", a:["−P₀V₀","P₀V₀","P₀V₀/2","2P₀V₀"], ans:1},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail de la compression isotherme reçu par le gaz vaut :", a:["nRT₀·ln2","−nRT₁·ln2","nRT₁·ln2","−nRT₀/2"], ans:1},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail total du cycle W_cycle = W₁ + W₂ + W₃ (W₃ = 0) est :", a:["0","P₀V₀ − nRT₁·ln2","P₀V₀ + nRT₀·ln2","2P₀V₀"], ans:1},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Sur un cycle complet, le premier principe donne ΔU = 0. Donc la chaleur échangée Q_total vaut :", a:["0","W_total","−W_total","2W_total"], ans:2},
+    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Dans un diagramme (P,V), une transformation isochore (volume constant) se représente par :", a:["Une courbe hyperbolique","Une droite horizontale","Une droite verticale","Une parabole"], ans:2},
+    {section:"🔹 Changements d'état — Glace et eau", enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Changements d'état</div>4 kg glace -27°C dans 15 L eau 100°C. c_glace=2100, c_eau=4185, L_fusion=334000 J/kg", q:"Q₁ = énergie pour chauffer 4 kg de glace de −27°C à 0°C. Q₁ = m·c_glace·ΔT = ?", a:["113400 J","226800 J","453600 J","56700 J"], ans:1},
+    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"Q₂ = énergie pour faire fondre totalement 4 kg de glace à 0°C. Q₂ = m·L_fusion = ?", a:["334000 J","668000 J","1336000 J","83500 J"], ans:2},
+    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"Q₃ = énergie cédée par 15 kg d'eau en refroidissant de 100°C à 0°C. Q₃ = m_eau·c_eau·100 = ?", a:["418500 J","6277500 J","4185000 J","627750 J"], ans:1},
+    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"L'eau chaude (Q₃ ≈ 6,28 MJ) doit fournir Q₁ + Q₂ ≈ 1,56 MJ pour fondre toute la glace. L'eau chaude est-elle suffisante ?", a:["Non, il manque","Oui, Q₃ >> Q₁+Q₂, toute la glace fond","On ne peut pas conclure","Juste suffisante"], ans:1},
+    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"À l'équilibre (toute la glace fondue), la température T_eq vérifie l'équation de bilan. T_eq ≈ :", a:["0°C","20°C","59,3°C","100°C"], ans:2}
   ],
-  feedbackMessages:{
-    "bien-high":"T'as calculé des cycles ET des changements d'état, et t'as >16 ? Partner la shériffe de la thermodynamique. 🔥 Fière de toi.",
-    "bien-mid":"12-16 sur un sujet pareil c'est vraiment bien. Les équilibres thermiques n'ont plus de secrets pour toi. 💪",
-    "bien-low":"8-12 et c'était un sujet de thermo compliqué. C'est passé. C'est ce qui compte. 💛",
-    "moyen-high":"Moyen et >16 ? Désolé mais je te crois pas 😂. T'as fait un très bon truc. Accepte le compliment.",
-    "moyen-mid":"Moyen + 12-16 = bien joué en réalité. Stop minimiser. 🙂",
-    "moyen-low":"Okay c'était mitigé mais 8-12 ça passe. Méca c'est compliqué. T'as tenu. 💛",
-    "difficile-high":"C'était dur et >16. Tu sais ce que ça dit sur toi ? Que t'es solide même quand tu penses pas l'être. 🥹",
-    "difficile-mid":"Difficile et 12-16. Voilà. T'as résisté. Partner's Excalibur n'a pas tremblé. 💪",
-    "difficile-low":"C'était vraiment hard. <12 c'est pas une honte sur un sujet pareil. On continue. Info vendredi. 💛"
-  }
+  feedbackMessages:{"bien-high":"T'as calculé des cycles ET des changements d'état, et t'as >16 ?","bien-mid":"12-16 sur un sujet pareil c'est vraiment bien.","bien-low":"8-12 et c'était un sujet de thermo compliqué.","moyen-high":"Moyen et >16 ? Désolé mais je te crois pas 😂","moyen-mid":"Moyen + 12-16 = bien joué en réalité.","moyen-low":"Okay c'était mitigé mais 8-12 ça passe.","difficile-high":"C'était dur et >16. Tu sais ce que ça dit sur toi ?","difficile-mid":"Difficile et 12-16. Voilà. T'as résisté.","difficile-low":"C'était vraiment hard. <12 c'est pas une honte."}
 },
-{
-  id:3, name:"Info", alias:'"La Récursion — Revanche Finale"', emoji:"💻", prime:4, date:"Vendredi",
-  quote:'"J\'ai relu le corrigé. Je connais mes erreurs. Et toi... tu les connais aussi ?"',
-  defeatPhrase:"free(this); — Je me libère. La Shériffe de PI a tout traversé. Pour de bon.",
-  noShuffle: true,
+{ id:3, name:"Info", alias:'"La Récursion — Revanche Finale"', emoji:"💻", prime:4, date:"Vendredi", quote:'"J\'ai relu le corrigé. Je connais mes erreurs."', defeatPhrase:"free(this); — Je me libère.", noShuffle: true,
   questions:[
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null,
-     q:"Qu'est-ce qu'une segmentation fault en C ?",
-     a:["Une erreur de compilation (syntaxe)","Un accès mémoire invalide : déréférencer un pointeur NULL, accéder hors des limites d'un tableau...","Une division par zéro","Une boucle infinie"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null,
-     q:"En C, l'opérateur | est le OU bit à bit. Que vaut 5 | 3 ? (5 = 0101₂, 3 = 0011₂)",
-     a:["1","2","7","15"], ans:2},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null,
-     q:"Que déclare int * const p ?",
-     a:["Un pointeur vers un entier constant (on ne peut pas modifier *p)","Un pointeur constant : l'adresse stockée dans p ne peut pas changer, mais *p peut être modifié","Un entier constant","Un pointeur initialisé à NULL"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null,
-     q:"Que fait le préprocesseur C ?",
-     a:["Il compile le code en assembleur","Il traite les directives #include (inclusion de fichiers) et remplace les macros #define","Il édite les liens (linking)","Il optimise le code machine"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null,
-     q:"Quelle est la meilleure structure pour implémenter une file (FIFO) en termes d'efficacité ?",
-     a:["Un tableau simple avec décalage","Insertion en queue et suppression en tête — et un tableau circulaire pour O(1) aux deux bouts","Une pile (stack)","Un arbre binaire"], ans:1},
-    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null,
-     q:"Dans decomposition(), la boucle for(i = (reste < max ? reste : max); i >= 1; i--) choisit i = min(reste, max). Pourquoi ce choix ?",
-     a:["Pour trier les valeurs","Pour éviter de prendre une valeur supérieure à ce qu'il reste à atteindre (évite de dépasser la somme) et maintenir un ordre décroissant (évite les doublons)","Pour optimiser la mémoire","Pour accélérer la récursion"], ans:1},
-    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null,
-     q:"Dans decomposition(), le cas terminal est atteint quand reste == 0. Que fait la fonction à ce moment ?",
-     a:["Elle retourne -1","Elle affiche la décomposition stockée dans tab[] puis retourne","Elle alloue de la mémoire supplémentaire","Elle recommence depuis le début"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique (listes chaînées)", enonce:null,
-     q:"La fonction ajouterConduite() insère le nouveau nœud en tête : nv->suivant = liste; return nv;. Que retourne-t-elle ?",
-     a:["L'ancien premier élément","Le nouvel élément, qui devient la nouvelle tête de liste","NULL si la liste est vide","Le dernier élément de la liste"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique (listes chaînées)", enonce:null,
-     q:"La fonction sauvegarder(FILE *f, Conduite *liste) parcourt la liste et appelle fprintf pour chaque nœud. Quel format écrit-elle ?",
-     a:["Binaire brut","CSV : debit,pression,destination sur chaque ligne via fprintf(f, \"%f,%f,%d\\n\",...)","JSON","XML"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique (listes chaînées)", enonce:null,
-     q:"Dans supprimer(), pourquoi le cas (prec == NULL) est-il traité séparément ?",
-     a:["Pour libérer la mémoire plus vite","Car c'est une suppression en tête : il n'y a pas de prédécesseur, donc on ne peut pas faire prec->suivant = cur->suivant — on met directement liste = cur->suivant","Car l'élément est introuvable","Car la liste n'a qu'un seul élément"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique (listes chaînées)", enonce:null,
-     q:"La fonction triPression() utilise deux boucles imbriquées sur la liste chaînée (style tri à bulles). Quelle est sa complexité temporelle ?",
-     a:["O(n log n)","O(n)","O(n²)","O(1)"], ans:2},
-    {section:"🔹 Exercice 2 — Réseau hydraulique (listes chaînées)", enonce:null,
-     q:"debitTotal(Conduite *liste) parcourt la liste et accumule les débits. Que retourne-t-elle ?",
-     a:["Le débit maximal","Le nombre de conduites","La somme de tous les débits de la liste","Le débit du premier élément"], ans:2}
+    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Qu'est-ce qu'une segmentation fault en C ?", a:["Erreur de compilation","Accès mémoire invalide","Division par zéro","Boucle infinie"], ans:1},
+    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"En C, l'opérateur | est le OU bit à bit. Que vaut 5 | 3 ?", a:["1","2","7","15"], ans:2},
+    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Que déclare int * const p ?", a:["Pointeur vers entier constant","Pointeur constant : l'adresse stockée ne peut pas changer","Entier constant","Pointeur initialisé à NULL"], ans:1},
+    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Que fait le préprocesseur C ?", a:["Compile en assembleur","Traite #include et remplace les macros","Édite les liens","Optimise le code"], ans:1},
+    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Quelle est la meilleure structure pour une file (FIFO) ?", a:["Tableau simple","Tableau circulaire (insertion queue, suppression tête)","Pile","Arbre binaire"], ans:1},
+    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null, q:"Dans decomposition(), la boucle for(i = (reste < max ? reste : max); i >= 1; i--) choisit i = min(reste, max). Pourquoi ?", a:["Pour trier","Pour éviter de dépasser la somme et maintenir ordre décroissant","Pour optimiser","Pour accélérer"], ans:1},
+    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null, q:"Dans decomposition(), le cas terminal reste == 0 : que fait la fonction ?", a:["Retourne -1","Affiche la décomposition et retourne","Alloue mémoire","Recommence"], ans:1},
+    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"ajouterConduite() insère en tête : nv->suivant = liste; return nv; que retourne-t-elle ?", a:["L'ancien premier","Le nouvel élément, nouvelle tête","NULL","Le dernier élément"], ans:1},
+    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"sauvegarder() parcourt la liste et appelle fprintf. Quel format écrit-elle ?", a:["Binaire","CSV (debit,pression,destination)","JSON","XML"], ans:1},
+    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"Dans supprimer(), pourquoi le cas (prec == NULL) est-il traité séparément ?", a:["Libère plus vite","Suppression en tête : pas de prédécesseur","Élément introuvable","Liste à un seul élément"], ans:1},
+    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"triPression() utilise deux boucles imbriquées. Complexité ?", a:["O(n log n)","O(n)","O(n²)","O(1)"], ans:2},
+    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"debitTotal(Conduite *liste) retourne :", a:["Débit maximal","Nombre de conduites","Somme de tous les débits","Débit du premier élément"], ans:2}
   ],
-  feedbackMessages:{
-    "bien-high":"Partner. >16 en info rattrapage. Sur LE sujet avec les listes chaînées et tout. Je... 😭 T'es incroyable. Vraiment.",
-    "bien-mid":"12-16 ! Les pointeurs, les listes chaînées, tout ça — t'as géré. Je suis pas surpris mais quand même fier. 😄",
-    "bien-low":"8-12 c'est bien. Info c'est technique et t'as tenu. Partner's Excalibur a bien fait son travail. 💛",
-    "moyen-high":"Moyen et >16 en info 😂 ? Okay Partner je sais plus quoi dire. T'es forte c'est tout.",
-    "moyen-mid":"12-16 c'est pas moyen, c'est bien. Arrête. 🙂 T'as réussi.",
-    "moyen-low":"C'était mitigé mais 8-12 en info rattrapage ça reste correct. On a traversé ça ensemble. 💛",
-    "difficile-high":"C'était dur et >16. Partner tu m'épates à chaque fois. Pour de vrai. 🥹",
-    "difficile-mid":"Difficile + 12-16. Résultat : tu passes. Tu passes toujours. 💪",
-    "difficile-low":"C'était hard. <12. Et alors ? T'as quand même fini. T'as pas abandonné. C'est tout ce qui compte. LYP. 💛"
-  }
-}
-];
+  feedbackMessages:{"bien-high":"Partner. >16 en info rattrapage. T'es incroyable.","bien-mid":"12-16 ! Les pointeurs, les listes chaînées — t'as géré.","bien-low":"8-12 c'est bien. Info c'est technique.","moyen-high":"Moyen et >16 en info 😂 ? T'es forte.","moyen-mid":"12-16 c'est pas moyen, c'est bien.","moyen-low":"C'était mitigé mais 8-12 c'est correct.","difficile-high":"C'était dur et >16. Tu m'épates.","difficile-mid":"Difficile + 12-16. Tu passes toujours.","difficile-low":"C'était hard. <12. T'as pas abandonné. C'est tout."}
+}];
 
-// ══════════════════════════════════════════
-//  STATE
-// ══════════════════════════════════════════
 let bossStates = ['unlocked','locked','locked','locked'];
 let totalDone = 0;
 let duel = {boss:null,lives:3,correct:0,qIdx:0,total:0,jokerUsed:false,locked:false,currentEnonce:null};
-
-// ══════════════════════════════════════════
-//  BOOT
-// ══════════════════════════════════════════
-document.addEventListener('DOMContentLoaded',()=>{
-  spawnDust(); spawnStars(); buildGrid(); startIntro();
-  document.getElementById('env-seal').addEventListener('click',openEnvelope);
-  document.getElementById('joker-btn').addEventListener('click',useJoker);
-});
-
-// ══════════════════════════════════════════
-//  SCREENS
-// ══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{ spawnDust(); spawnStars(); buildGrid(); startIntro(); document.getElementById('env-seal').addEventListener('click',openEnvelope); document.getElementById('joker-btn').addEventListener('click',useJoker); });
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-
-// ══════════════════════════════════════════
-//  AMBIENT
-// ══════════════════════════════════════════
 function spawnDust(){for(let i=0;i<18;i++){const d=document.createElement('div');d.className='dust';const sz=1+Math.random()*3;d.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}vw;animation-duration:${10+Math.random()*15}s;animation-delay:${Math.random()*14}s;`;document.body.appendChild(d);}}
 function spawnStars(){for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star-bg';const sz=0.5+Math.random()*1.5;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}vh;left:${Math.random()*100}vw;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*5}s;`;document.body.appendChild(s);}}
-
-// ══════════════════════════════════════════
-//  INTRO
-// ══════════════════════════════════════════
-const STORY=`La ville de PI avait retrouvé son calme.
-
-Partner était rentrée. Les sept boss étaient tombés. Partner's Excalibur avait fait son œuvre.
-
-Mais ce matin-là, une enveloppe rouge attendait sous la porte.
-
-"Ils reviennent. Quatre d'entre eux ont survécu. Analyse, Algèbre, Méca, Info. Ils ont appris de leur défaite. Ils ont révisé leurs erreurs.
-
-La ville de PI tremble à nouveau."
-
-Partner prit son stylo. Partner's Excalibur n'avait pas séché.
-
-Elle avait une dernière chose à faire.`;
-
+const STORY=`La ville de PI avait retrouvé son calme.\n\nPartner était rentrée. Les sept boss étaient tombés. L'Encre de Gabriel avait fait son œuvre.\n\nMais ce matin-là, une enveloppe rouge attendait sous la porte.\n\n"Ils reviennent. Quatre d'entre eux ont survécu. Analyse, Algèbre, Méca, Info. Ils ont appris de leur défaite. Ils ont révisé leurs erreurs.\n\nLa ville de PI tremble à nouveau."\n\nPartner prit son stylo. L'Encre de Gabriel n'avait pas séché.\n\nElle avait une dernière chose à faire.`;
 function startIntro(){const el=document.getElementById('tw-text');const cur=el.querySelector('.tw-cursor');let i=0;function tick(){if(i<STORY.length){cur.insertAdjacentText('beforebegin',STORY[i]);i++;const c=STORY[i-1];const d=c==='\n'?140:c==='.'||c==='…'?85:c===','?50:20;setTimeout(tick,d);}else{cur.style.display='none';document.getElementById('rule2').style.opacity='1';setTimeout(startCountdown,700);}}tick();}
 function startCountdown(){const wrap=document.getElementById('cd-wrap');const nEl=document.getElementById('cd-n');const bEl=document.getElementById('cd-bar');wrap.style.display='flex';let n=5;nEl.textContent=n;const iv=setInterval(()=>{n--;if(n<=0){clearInterval(iv);show('s-town');}else{nEl.textContent=n;nEl.style.animation='none';void nEl.offsetWidth;nEl.style.animation='cdPulse 1s ease-in-out infinite';bEl.style.width=(n/5*100)+'%';}},1000);}
-
-// ══════════════════════════════════════════
-//  TOWN
-// ══════════════════════════════════════════
 function buildGrid(){const grid=document.getElementById('boss-grid');grid.innerHTML='';BOSSES.forEach((b,i)=>{const card=document.createElement('div');card.className='bcard';card.id='bcard-'+i;card.innerHTML=`<div class="bcard-nail"></div><div class="bcard-label">WANTED <span class="bcard-recidive">— RÉCIDIVISTE</span></div><span class="bcard-emoji">${b.emoji}</span><div class="bcard-name">${b.name}</div><div class="bcard-date">${b.date}</div><div class="bcard-stars">${'★'.repeat(b.prime)}</div><div class="bcard-status" id="bstatus-${i}"></div><div class="bcard-stamp"><div class="bcard-stamp-inner">NEUTRALISÉ</div></div>`;grid.appendChild(card);});updateGrid();}
+function updateGrid(){document.getElementById('hud-beaten').textContent=totalDone;BOSSES.forEach((_,i)=>{const card=document.getElementById('bcard-'+i);if(!card)return;const fresh=card.cloneNode(true);card.replaceWith(fresh);const st=bossStates[i];fresh.classList.remove('unlocked','done','awaiting');if(st==='done'){fresh.classList.add('done');}else if(st==='beaten-waiting'){fresh.classList.add('awaiting');const badge=document.createElement('div');badge.className='bcard-await-badge';badge.textContent='RETOUR';fresh.appendChild(badge);document.getElementById('bstatus-'+i).textContent='✦ Donne tes impressions';fresh.addEventListener('click',()=>showFeedback(i));}else if(st==='unlocked'){fresh.classList.add('unlocked');document.getElementById('bstatus-'+i).textContent='◀ Affronter';fresh.addEventListener('click',()=>{show('s-duel');startDuel(i);});}else{document.getElementById('bstatus-'+i).textContent='Verrouillé';}});}
+function startDuel(idx){const b=BOSSES[idx];const qs=b.noShuffle?[...b.questions]:shuffle([...b.questions]);duel={boss:b,lives:3,correct:0,qIdx:0,total:qs.length,qs:qs,jokerUsed:false,locked:false,currentEnonce:null};document.getElementById('duel-name').textContent='⚔ '+b.name.toUpperCase()+' ⚔';document.getElementById('dc-emoji').textContent=b.emoji;document.getElementById('dc-name-el').textContent=b.name+' — Revanche';document.getElementById('dc-alias').textContent=b.alias;document.getElementById('dc-quote').textContent=b.quote;const jBtn=document.getElementById('joker-btn');jBtn.disabled=false; jBtn.textContent='💀 JOKER';renderHUD();renderQ();}
+function renderHUD(){document.getElementById('duel-lives').innerHTML='❤️'.repeat(duel.lives)+(duel.lives<3?'🖤'.repeat(3-duel.lives):'');document.getElementById('duel-prog').textContent=duel.correct+'/'+duel.total+' ✓';}
+function renderQ(){if(duel.qIdx>=duel.qs.length){onBossDefeated();return;}const q=duel.qs[duel.qIdx];document.getElementById('section-label').textContent=q.section||'';const eBox=document.getElementById('enonce-box');if(q.enonce && q.enonce!==duel.currentEnonce){duel.currentEnonce=q.enonce;eBox.innerHTML=q.enonce;eBox.style.display='block';}else if(!q.enonce){eBox.style.display='none';}document.getElementById('q-num').textContent=`Q${duel.qIdx+1}/${duel.total}  —  ${duel.boss.name}`;document.getElementById('q-text').textContent=q.q;const grid=document.getElementById('answers-grid');grid.innerHTML='';['A','B','C','D'].forEach((l,i)=>{const c=document.createElement('div');c.className='cartridge';c.innerHTML=`<span class="cart-l">${l}</span><span class="cart-t">${q.a[i]}</span>`;c.addEventListener('click',ev=>onAnswer(ev,c,i,q.ans));grid.appendChild(c);});}
+function onAnswer(ev,cartEl,chosen,correct){if(duel.locked)return;duel.locked=true;inkSplat(ev.clientX,ev.clientY);if(chosen===correct){cartEl.classList.add('hit-good');flashFX(false);duel.correct++;duel.qIdx++;setTimeout(()=>{cartEl.classList.remove('hit-good');duel.locked=false;renderHUD();if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();},650);}else{cartEl.classList.add('hit-bad');flashFX(true);duel.lives--;duel.qIdx++;setTimeout(()=>{cartEl.classList.remove('hit-bad');duel.locked=false;renderHUD();if(duel.lives<=0)onDuelFailed();else{if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();}},700);}}
+function useJoker(){if(duel.jokerUsed||duel.locked)return;duel.jokerUsed=true;const btn=document.getElementById('joker-btn');btn.disabled=true;btn.textContent='💀 Utilisé';const fl=document.createElement('div');fl.className='joker-flash';fl.textContent='✒️ Joker utilisé — Question validée';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1900);duel.correct++;duel.qIdx++;setTimeout(()=>{duel.locked=false;renderHUD();if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();},500);}
+function onDuelFailed(){showOv(`<div class="fail-box"><div style="font-family:'Rye',cursive;font-size:18px;color:var(--red);margin-bottom:8px;">⚠ DÉFAITE</div><span style="font-size:44px;display:block;margin:8px 0;">💀</span><div style="font-size:12px;color:var(--sepia2);font-style:italic;border:1px dashed var(--sepia3);padding:8px;margin:10px 0;line-height:1.7;">"L'Encre s'est épuisée... Mais Partner revient toujours."</div><button class="bd-continue-btn" id="retry-btn" style="margin-top:12px;">↺ RÉESSAYER</button></div>`);document.getElementById('retry-btn').addEventListener('click',()=>{hideOv();startDuel(duel.boss.id);});}
+function onBossDefeated(){const b=duel.boss;bossStates[b.id]='beaten-waiting';showOv(`<div class="boss-defeated"><div class="bd-stamp">NEUTRALISÉ</div><div class="bd-title">${b.name} — Tombé</div><span class="bd-emoji">${b.emoji}</span><div class="bd-phrase">"${b.defeatPhrase}"</div><div style="font-size:11px;color:var(--sepia3);font-style:italic;margin:8px 0;padding:6px;border:1px dashed var(--sepia3);">Reviens ici après ta compo pour donner tes impressions.<br>Gabriel a un message pour toi. ✒️</div><button class="bd-continue-btn" id="cont-btn">→ RETOUR EN VILLE</button></div>`);document.getElementById('cont-btn').addEventListener('click',()=>{hideOv();updateGrid();show('s-town');});}
+function showFeedback(idx){const b=BOSSES[idx];showOv(`<div class="feedback-box"><div class="fb-title">✒️ Rapport de Mission</div><div class="fb-sub">${b.emoji} ${b.name} — Comment c'était ?<br>Gabriel veut savoir.</div><div class="fb-group"><div class="fb-group-label">Comment ça s'est passé ?</div><div class="fb-options"><div class="fb-opt" data-group="feeling" data-val="bien">😊 Bien — J'ai géré</div><div class="fb-opt" data-group="feeling" data-val="moyen">😐 Moyen — Quelques doutes</div><div class="fb-opt" data-group="feeling" data-val="difficile">😬 Difficile — C'était hard</div></div></div><div class="fb-group"><div class="fb-group-label">Ta note estimée ?</div><div class="fb-options"><div class="fb-opt" data-group="note" data-val="low">&lt; 8</div><div class="fb-opt" data-group="note" data-val="low">8 – 12</div><div class="fb-opt" data-group="note" data-val="mid">12 – 16</div><div class="fb-opt" data-group="note" data-val="high">&gt; 16</div></div></div><button class="fb-submit" id="fb-submit-btn">✒ Envoyer à Gabriel</button><div id="fb-err" style="font-size:11px;color:var(--red);margin-top:8px;font-style:italic;min-height:14px;"></div><div id="capture-reminder" style="display:none;" class="capture-note">📸 Capture d'écran ce message et envoie-le à Gabriel — Il veut savoir comment tu as trouvé cette épreuve.</div></div>`);let feeling=null,note=null;document.querySelectorAll('.fb-opt').forEach(opt=>{opt.addEventListener('click',()=>{const grp=opt.dataset.group;document.querySelectorAll(`.fb-opt[data-group="${grp}"]`).forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');if(grp==='feeling')feeling=opt.dataset.val;if(grp==='note')note=opt.dataset.val;if(feeling&&note){document.getElementById('fb-submit-btn').style.display='block';document.getElementById('capture-reminder').style.display='block';}});});document.getElementById('fb-submit-btn').addEventListener('click',()=>{if(!feeling||!note){document.getElementById('fb-err').textContent="Réponds aux deux questions.";return;}hideOv();showGabrielMessage(idx,feeling,note);});}
+function showGabrielMessage(idx,feeling,note){const b=BOSSES[idx];const key=feeling+'-'+note;const msg=b.feedbackMessages[key]||"Je suis là quoi qu'il arrive. LYP 💛";showOv(`<div class="gabriel-msg"><div class="gm-from">— Message de Gabriel —</div><span class="gm-pen">✒️</span><div class="gm-text">${msg}</div><div class="gm-sig">LYP 💛</div><button class="gm-continue" id="gm-cont">→ Continuer</button></div>`);document.getElementById('gm-cont').addEventListener('click',()=>{hideOv();bossStates[idx]='done';totalDone++;if(idx===0){if(bossStates[1]==='locked')bossStates[1]='unlocked';if(bossStates[2]==='locked')bossStates[2]='unlocked';}else if(idx===1||idx===2){if(bossStates[1]==='done'&&bossStates[2]==='done'){if(bossStates[3]==='locked')bossStates[3]='unlocked';}}updateGrid();show('s-town');if(totalDone===4)setTimeout(()=>show('s-victory'),1000);});}
+function showOv(html){const o=document.getElementById('overlay');o.innerHTML=html;o.style.display='flex';}
+function hideOv(){document.getElementById('overlay').style.display='none';}
+function inkSplat(x,y){const el=document.createElement('div');el.className='ink-splat';el.textContent='✒️';el.style.left=(x-20)+'px';el.style.top=(y-20)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),700);}
+function flashFX(red){const fl=document.getElementById('flash');fl.style.background=red?'rgba(139,24,24,0.3)':'rgba(255,255,255,0.45)';fl.style.opacity='1';setTimeout(()=>fl.style.opacity='0',130);}
+function launchConfetti(){const cols=['#c9a020','#e8c040','#8b1818','#c8a060','#f0e6c8','#2c1808'];for(let i=0;i<80;i++){setTimeout(()=>{const c=document.createElement('div');c.className='conf';c.style.cssText=`left:${Math.random()*100}vw;top:-10px;background:${cols[Math.floor(Math.random()*cols.length)]};width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${2.5+Math.random()*3}s;`;document.body.appendChild(c);setTimeout(()=>c.remove(),6000);},i*60);}}
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
 
-function updateGrid(){document.getElementById('hud-beaten').textContent=totalDone;BOSSES.forEach((b,i)=>{const card=document.getElementById('bcard-'+i);if(!card)return;const fresh=card.cloneNode(true);card.replaceWith(fresh);const st=bossStates[i];fresh.classList.remove('unlocked','done','awaiting');if(st==='done'){fresh.classList.add('done');}else if(st==='beaten-waiting'){fresh.classList.add('awaiting');const badge=document.createElement('div');badge.className='bcard-await-badge';badge.textContent='RETOUR';fresh.appendChild(badge);document.getElementById('bstatus-'+i).textContent='✦ Donne tes impressions';fresh.addEventListener('click',()=>showFeedback(i));}else if(st==='unlocked'){fresh.classList.add('unlocked');document.getElementById('bstatus-'+i).textContent='◀ Affronter';fresh.addEventListener('click',()=>{show('s-duel');startDuel(i);});}else{document.getElementById('bstatus-'+i).textContent='Verrouillé';}});}
-
-// ══════════════════════════════════════════
-//  DUEL
-// ══════════════════════════════════════════
-function startDuel(idx){
-  const b=BOSSES[idx];
-  const qs=b.noShuffle?[...b.questions]:shuffle([...b.questions]);
-  duel={boss:b,lives:3,correct:0,qIdx:0,total:qs.length,qs:qs,jokerUsed:false,locked:false,currentEnonce:null};
-  document.getElementById('duel-name').textContent='⚔ '+b.name.toUpperCase()+' ⚔';
-  document.getElementById('dc-emoji').textContent=b.emoji;
-  document.getElementById('dc-name-el').textContent=b.name+' — Revanche';
-  document.getElementById('dc-alias').textContent=b.alias;
-  document.getElementById('dc-quote').textContent=b.quote;
-  const jBtn=document.getElementById('joker-btn');
-  jBtn.disabled=false; jBtn.textContent='💀 JOKER';
-  renderHUD(); renderQ();
-}
-
-function renderHUD(){
-  document.getElementById('duel-lives').innerHTML='❤️'.repeat(duel.lives)+(duel.lives<3?'🖤'.repeat(3-duel.lives):'');
-  document.getElementById('duel-prog').textContent=duel.correct+'/'+duel.total+' ✓';
-}
-
-function renderQ(){
-  if(duel.qIdx>=duel.qs.length){onBossDefeated();return;}
-  const q=duel.qs[duel.qIdx];
-  // Section label
-  document.getElementById('section-label').textContent=q.section||'';
-  // Enonce box: show only on first appearance of this enonce
-  const eBox=document.getElementById('enonce-box');
-  if(q.enonce && q.enonce!==duel.currentEnonce){
-    duel.currentEnonce=q.enonce;
-    eBox.innerHTML=q.enonce;
-    eBox.style.display='block';
-  } else if(!q.enonce){
-    eBox.style.display='none';
-  }
-  // q number
-  document.getElementById('q-num').textContent=`Q${duel.qIdx+1}/${duel.total}  —  ${duel.boss.name}`;
-  document.getElementById('q-text').textContent=q.q;
-  const grid=document.getElementById('answers-grid');
-  grid.innerHTML='';
-  ['A','B','C','D'].forEach((l,i)=>{
-    const c=document.createElement('div');c.className='cartridge';
-    c.innerHTML=`<span class="cart-l">${l}</span><span class="cart-t">${q.a[i]}</span>`;
-    c.addEventListener('click',ev=>onAnswer(ev,c,i,q.ans));
-    grid.appendChild(c);
-  });
-}
-
-function onAnswer(ev,cartEl,chosen,correct){
-  if(duel.locked)return;
-  duel.locked=true;
-  inkSplat(ev.clientX,ev.clientY);
-  if(chosen===correct){
-    cartEl.classList.add('hit-good');flashFX(false);
-    duel.correct++;duel.qIdx++;
-    setTimeout(()=>{cartEl.classList.remove('hit-good');duel.locked=false;renderHUD();
-      if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();
-    },650);
-  }else{
-    cartEl.classList.add('hit-bad');flashFX(true);
-    duel.lives--;duel.qIdx++;
-    setTimeout(()=>{cartEl.classList.remove('hit-bad');duel.locked=false;renderHUD();
-      if(duel.lives<=0)onDuelFailed();else{if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();}
-    },700);
-  }
-}
-
-// ── JOKER ──
-function useJoker(){
-  if(duel.jokerUsed||duel.locked)return;
-  duel.jokerUsed=true;
-  const btn=document.getElementById('joker-btn');
-  btn.disabled=true;btn.textContent='💀 Utilisé';
-  // Show flash message
-  const fl=document.createElement('div');fl.className='joker-flash';fl.textContent='✒️ Joker utilisé — Question validée';
-  document.body.appendChild(fl);setTimeout(()=>fl.remove(),1900);
-  // Count as correct, advance
-  duel.correct++;duel.qIdx++;
-  setTimeout(()=>{duel.locked=false;renderHUD();
-    if(duel.qIdx>=duel.qs.length)onBossDefeated();else renderQ();
-  },500);
-}
-
-function onDuelFailed(){
-  showOv(`<div class="fail-box"><div style="font-family:'Rye',cursive;font-size:18px;color:var(--red);margin-bottom:8px;">⚠ DÉFAITE</div><span style="font-size:44px;display:block;margin:8px 0;">💀</span><div style="font-size:12px;color:var(--sepia2);font-style:italic;border:1px dashed var(--sepia3);padding:8px;margin:10px 0;line-height:1.7;">"L'Encre s'est épuisée... Mais Partner revient toujours."</div><button class="bd-continue-btn" id="retry-btn" style="margin-top:12px;">↺ RÉESSAYER</button></div>`);
-  document.getElementById('retry-btn').addEventListener('click',()=>{hideOv();startDuel(duel.boss.id);});
-}
-
-function onBossDefeated(){
-  const b=duel.boss;
-  bossStates[b.id]='beaten-waiting';
-  showOv(`<div class="boss-defeated"><div class="bd-stamp">NEUTRALISÉ</div><div class="bd-title">${b.name} — Tombé</div><span class="bd-emoji">${b.emoji}</span><div class="bd-phrase">"${b.defeatPhrase}"</div><div style="font-size:11px;color:var(--sepia3);font-style:italic;margin:8px 0;padding:6px;border:1px dashed var(--sepia3);">Reviens ici après ta compo pour donner tes impressions.<br>Gabriel a un message pour toi. ✒️</div><button class="bd-continue-btn" id="cont-btn">→ RETOUR EN VILLE</button></div>`);
-  document.getElementById('cont-btn').addEventListener('click',()=>{hideOv();updateGrid();show('s-town');});
-}
-
-// ══════════════════════════════════════════
-//  FEEDBACK
-// ══════════════════════════════════════════
-function showFeedback(idx){
-  const b=BOSSES[idx];
-  showOv(`<div class="feedback-box"><div class="fb-title">✒️ Rapport de Mission</div><div class="fb-sub">${b.emoji} ${b.name} — Comment c'était ?<br>Gabriel veut savoir.</div><div class="fb-group"><div class="fb-group-label">Comment ça s'est passé ?</div><div class="fb-options"><div class="fb-opt" data-group="feeling" data-val="bien">😊 Bien — J'ai géré</div><div class="fb-opt" data-group="feeling" data-val="moyen">😐 Moyen — Quelques doutes</div><div class="fb-opt" data-group="feeling" data-val="difficile">😬 Difficile — C'était hard</div></div></div><div class="fb-group"><div class="fb-group-label">Ta note estimée ?</div><div class="fb-options"><div class="fb-opt" data-group="note" data-val="low">&lt; 8</div><div class="fb-opt" data-group="note" data-val="low">8 – 12</div><div class="fb-opt" data-group="note" data-val="mid">12 – 16</div><div class="fb-opt" data-group="note" data-val="high">&gt; 16</div></div></div><button class="fb-submit" id="fb-submit-btn">✒ Envoyer à Gabriel</button><div id="fb-err" style="font-size:11px;color:var(--red);margin-top:8px;font-style:italic;min-height:14px;"></div></div>`);
-  let feeling=null,note=null;
-  document.querySelectorAll('.fb-opt').forEach(opt=>{opt.addEventListener('click',()=>{const grp=opt.dataset.group;document.querySelectorAll(`.fb-opt[data-group="${grp}"]`).forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');if(grp==='feeling')feeling=opt.dataset.val;if(grp==='note')note=opt.dataset.val;if(feeling&&note)document.getElementById('fb-submit-btn').style.display='block';});});
-  document.getElementById('fb-submit-btn').addEventListener('click',()=>{if(!feeling||!note){document.getElementById('fb-err').textContent="Réponds aux deux questions.";return;}hideOv();showGabrielMessage(idx,feeling,note);});
-}
-
-function showGabrielMessage(idx,feeling,note){
-  const b=BOSSES[idx];
-  const key=feeling+'-'+note;
-  const msg=b.feedbackMessages[key]||"Je suis là quoi qu'il arrive. LYP 💛";
-  showOv(`<div class="gabriel-msg"><div class="gm-from">— Message de Gabriel —</div><span class="gm-pen">✒️</span><div class="gm-text">${msg}</div><div class="gm-sig">LYP 💛</div><button class="gm-continue" id="gm-cont">→ Continuer</button></div>`);
-  document.getElementById('gm-cont').addEventListener('click',()=>{
-    hideOv();bossStates[idx]='done';totalDone++;
-    if(idx===0){if(bossStates[1]==='locked')bossStates[1]='unlocked';if(bossStates[2]==='locked')bossStates[2]='unlocked';}
-    else if(idx===1||idx===2){if(bossStates[1]==='done'&&bossStates[2]==='done'){if(bossStates[3]==='locked')bossStates[3]='unlocked';}}
-    updateGrid();show('s-town');
-    if(totalDone===4)setTimeout(()=>show('s-victory'),1000);
-  });
-}
-
-// ══════════════════════════════════════════
-//  ENVELOPE
-// ══════════════════════════════════════════
+// OUVERTURE ENVELOPPE + MENU JAPONAIS
+let menuActive = true;
 function openEnvelope(){
   document.getElementById('env-flap').classList.add('open');
   document.getElementById('env-seal').style.display='none';
   document.querySelector('.env-seal-label').style.display='none';
-  setTimeout(()=>{document.getElementById('letter').style.display='block';launchConfetti();},800);
+  setTimeout(()=>{
+    document.getElementById('letter').style.display='block';
+    launchConfetti();
+    injectJapaneseMenu();
+  },800);
 }
-
-// ══════════════════════════════════════════
-//  OVERLAY
-// ══════════════════════════════════════════
-function showOv(html){const o=document.getElementById('overlay');o.innerHTML=html;o.style.display='flex';}
-function hideOv(){document.getElementById('overlay').style.display='none';}
-
-// ══════════════════════════════════════════
-//  FX
-// ══════════════════════════════════════════
-function inkSplat(x,y){const el=document.createElement('div');el.className='ink-splat';el.textContent='✒️';el.style.left=(x-20)+'px';el.style.top=(y-20)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),700);}
-function flashFX(red){const fl=document.getElementById('flash');fl.style.background=red?'rgba(139,24,24,0.3)':'rgba(255,255,255,0.45)';fl.style.opacity='1';setTimeout(()=>fl.style.opacity='0',130);}
-function launchConfetti(){const cols=['#c9a020','#e8c040','#8b1818','#c8a060','#f0e6c8','#2c1808'];for(let i=0;i<80;i++){setTimeout(()=>{const c=document.createElement('div');c.className='conf';c.style.cssText=`left:${Math.random()*100}vw;top:-10px;background:${cols[Math.floor(Math.random()*cols.length)]};width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${2.5+Math.random()*3}s;`;document.body.appendChild(c);setTimeout(()=>c.remove(),6000);},i*60);}}
-
-// ══════════════════════════════════════════
-//  UTILS
-// ══════════════════════════════════════════
-function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+function injectJapaneseMenu(){
+  const root = document.getElementById('japanese-menu-root');
+  root.innerHTML = `
+    <div class="japanese-menu-container">
+      <div class="lantern"></div>
+      <div class="menu-title">🍜 Gabriel's Secret Kitchen 🍜</div>
+      <div class="menu-sub">— Le Dernier Duel Culinaire —</div>
+      <div class="plats-grid" id="plats-grid">
+        <div class="plat-card" data-plat="Poulet Agent Double"><span class="plat-emoji">🍗🥷</span><div class="plat-name">Poulet Agent Double</div><div class="plat-desc">Double épices, mission secrète</div></div>
+        <div class="plat-card" data-plat="Poulet Mayo"><span class="plat-emoji">🍗🥚</span><div class="plat-name">Poulet Mayo</div><div class="plat-desc">Onctueux, classique revisité</div></div>
+        <div class="plat-card" data-plat="Poulet Sauce Diabolique"><span class="plat-emoji">🍗🌶️🔥</span><div class="plat-name">Poulet Sauce Diabolique</div><div class="plat-desc">Feu d'enfer, relever le défi</div></div>
+        <div class="plat-card" data-plat="Poulet Sauce Angélique"><span class="plat-emoji">🍗🕊️✨</span><div class="plat-name">Poulet Sauce Angélique</div><div class="plat-desc">Douceur céleste, miel & citron</div></div>
+        <div class="plat-card" data-plat="La Force Tranquille"><span class="plat-emoji">🍗🧘‍♀️🌿</span><div class="plat-name">La Force Tranquille...</div><div class="plat-desc">1, 2 ou 3 ?</div></div>
+        <div class="plat-card" data-plat="Autre"><span class="plat-emoji">✍️📝</span><div class="plat-name">Autre</div><div class="plat-desc">Laisse libre cours à ton envie</div></div>
+      </div>
+      <div class="ticket-area" id="ticket-area"><div class="ticket-title">🧾 TICKET DE COMMANDE</div><div class="ticket-content" id="ticket-content">Aucun plat sélectionné</div><div class="ticket-stamp" style="display:none;">● COMMANDE REÇUE ●</div></div>
+      <input type="text" id="autre-input" class="autre-champ" placeholder="Écris ton plat personnalisé...">
+      <button id="valider-commande" class="valider-btn">🍽️ VALIDER MA COMMANDE 🍽️</button>
+      <div id="commande-animation" style="display:none;"></div>
+    </div>
+  `;
+  let selectedPlat = null;
+  const platCards = document.querySelectorAll('.plat-card');
+  const ticketContent = document.getElementById('ticket-content');
+  const ticketStamp = document.querySelector('.ticket-stamp');
+  const autreInput = document.getElementById('autre-input');
+  const validerBtn = document.getElementById('valider-commande');
+  platCards.forEach(card=>{
+    card.addEventListener('click',()=>{
+      platCards.forEach(c=>c.style.background='');
+      card.style.background='rgba(201,160,32,0.3)';
+      const plat = card.dataset.plat;
+      selectedPlat = plat;
+      if(plat === 'Autre'){
+        autreInput.style.display='block';
+        ticketContent.innerHTML = 'En attente de ton choix... écris ton plat personnalisé';
+      } else {
+        autreInput.style.display='none';
+        ticketContent.innerHTML = `${plat} ${card.querySelector('.plat-emoji')?.innerHTML||'🍗'}<br>Commande enregistrée.`;
+        ticketStamp.style.display='inline-block';
+      }
+    });
+  });
+  validerBtn.addEventListener('click',()=>{
+    if(!selectedPlat && !autreInput.value.trim()){ ticketContent.innerHTML = "❌ Choisis un plat d'abord !"; return; }
+    let finalChoice = selectedPlat;
+    if(selectedPlat === 'Autre' && autreInput.value.trim()) finalChoice = autreInput.value.trim();
+    else if(selectedPlat === 'Autre'){ ticketContent.innerHTML = "✏️ Écris ton plat personnalisé"; return; }
+    const isForceTranquille = (finalChoice === 'La Force Tranquille');
+    // Lancer l'animation de cuisine
+    const container = document.querySelector('.japanese-menu-container');
+    const platGrid = document.getElementById('plats-grid');
+    const ticketArea = document.getElementById('ticket-area');
+    const validerBtnOrig = document.getElementById('valider-commande');
+    const animationDiv = document.getElementById('commande-animation');
+    platGrid.style.display = 'none';
+    ticketArea.style.display = 'none';
+    validerBtnOrig.style.display = 'none';
+    animationDiv.style.display = 'block';
+    animationDiv.innerHTML = `<div class="cuisine-animation"><div class="cooking-chicken">🍗🔥</div><div class="steam">💨💨💨</div><div class="countdown-circle" id="cd-circle">15</div><div style="margin-top:10px;">Le chef prépare ta commande... 🧑‍🍳</div></div>`;
+    let seconds = 15;
+    const cdSpan = document.getElementById('cd-circle');
+    const interval = setInterval(()=>{ seconds--; if(cdSpan) cdSpan.innerText = seconds; if(seconds<=0){ clearInterval(interval); finalizeOrder(finalChoice, isForceTranquille, container); } },1000);
+  });
+}
+function finalizeOrder(choice, isForce, container){
+  let finalMessage = '';
+  if(isForce){
+    finalMessage = `<div class="final-message"><div class="final-jp">🍗 特別な一品 🍗</div><div class="final-jp" style="font-size:28px;">Poulet Yassa parfumé aux épices douces</div><div class="final-jp">✨  chef a choisi pour toi ✨</div></div>`;
+  } else {
+    finalMessage = `<div class="final-message"><div class="final-jp">召し上がれ</div><div class="final-jp" style="font-size:18px; letter-spacing:2px;">(Meshiagare — Bon appétit)</div><div class="final-jp" style="font-size:16px;">ごちそうさまでした</div><div style="margin:15px 0;">🍗 ${choice} — Gabriel valide ta commande 🍗</div><div>Bonne dégustation, Partner. Tu l'as mérité.</div></div>`;
+  }
+  container.innerHTML = finalMessage + `<div class="final-capture"><div style="font-size:22px; animation:pulseCapture 1.2s infinite;">📸</div><div style="font-weight:bold;">Capture d'écran ce message et envoie-le à Gabriel pour qu'il sache que ta commande est prête !</div><div style="font-size:11px; margin-top:8px;">Il t'attend pour partager ce repas. 💛</div></div>`;
+  launchConfetti();
+}
 </script>
 </body>
 </html>
+
