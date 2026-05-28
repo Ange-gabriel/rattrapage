@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Partner — Le Retour des Ombres | Duel Culinaire</title>
+<title>Partner — Le Retour des Ombres | Cadeau Magique</title>
 <link href="https://fonts.googleapis.com/css2?family=Rye&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -85,10 +85,8 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 @keyframes jokerAppear{0%{opacity:0;transform:translate(-50%,-50%) scale(0.8);}20%{opacity:1;transform:translate(-50%,-50%) scale(1);}80%{opacity:1;}100%{opacity:0;transform:translate(-50%,-50%) scale(1.05);}}
 
 .section-label{font-family:'Josefin Slab',serif;font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;background:rgba(201,160,32,0.1);border:1px solid rgba(201,160,32,0.3);padding:4px 12px;margin-bottom:4px;align-self:flex-start;}
-
 .enonce-box{background:rgba(44,26,8,0.15);border:1px solid var(--sepia2);border-left:3px solid var(--gold);padding:12px 16px;width:100%;max-width:720px;font-size:clamp(11px,1.6vw,13px);color:var(--sepia1);line-height:1.8;}
 .enonce-box .enonce-title{font-family:'Rye',cursive;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:6px;}
-
 .duel-card{background:var(--paper);width:100%;max-width:480px;padding:18px 20px;border:3px solid var(--sepia2);position:relative;box-shadow:0 0 50px rgba(0,0,0,0.8);}
 .duel-card::before{content:'';position:absolute;inset:8px;border:1px solid rgba(92,58,24,0.28);pointer-events:none;}
 .duel-card-nail{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:11px;height:11px;background:radial-gradient(circle at 35% 35%,#e0b84a,#8b6914);border-radius:50%;box-shadow:1px 1px 5px rgba(0,0,0,0.6);z-index:5;}
@@ -149,7 +147,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .fail-box{background:var(--paper);max-width:400px;width:100%;padding:24px 28px;border:3px solid var(--red);position:relative;box-shadow:0 0 60px rgba(139,24,24,0.4);text-align:center;animation:bossAppear 0.4s ease;}
 .fail-box::before{content:'';position:absolute;inset:8px;border:1px solid rgba(139,24,24,0.2);pointer-events:none;}
 
-/* VICTORY & MENU JAPONAIS */
+/* VICTORY + CADEAU MAGIQUE */
 #s-victory{background:radial-gradient(ellipse at center,#1a0a00 0%,#050200 100%);}
 .envelope-wrap{display:flex;flex-direction:column;align-items:center;max-width:580px;width:100%;}
 .envelope-outer{width:100%;background:#c8a060;border:2px solid var(--sepia2);position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.8);animation:envDrop 1s ease;}
@@ -169,40 +167,30 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 .letter-text{font-size:clamp(13px,2vw,14px);color:var(--sepia1);line-height:2.1;text-align:left;border-top:1px dashed var(--sepia2);border-bottom:1px dashed var(--sepia2);padding:14px 0;margin-bottom:12px;}
 .letter-sig{font-family:'Rye',cursive;font-size:20px;color:var(--gold);text-align:center;}
 
-/* MENU JAPONAIS */
-.japanese-menu-container{background:linear-gradient(145deg,#2c2418 0%,#1a1408 100%);border:8px double #c9a020;border-radius:4px;padding:24px 20px;margin-top:24px;position:relative;box-shadow:0 20px 40px rgba(0,0,0,0.5);font-family:'Noto Serif JP','Georgia',serif;}
-.lantern{position:absolute;top:-12px;right:20px;width:36px;height:48px;background:#c9301a;border-radius:50% 50% 30% 30%;box-shadow:0 0 15px #ff8c42;animation:swingLantern 2.5s ease-in-out infinite;z-index:2;}
-.lantern::before{content:'✨';position:absolute;top:-22px;left:8px;font-size:16px;color:var(--gold);}
-@keyframes swingLantern{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
-.menu-title{font-family:'Rye',cursive;font-size:28px;text-align:center;color:var(--gold);letter-spacing:4px;text-shadow:2px 2px 0 #2c1a08;margin-bottom:8px;}
-.menu-sub{text-align:center;color:var(--sepia4);font-size:12px;letter-spacing:4px;margin-bottom:24px;border-bottom:1px solid rgba(201,160,32,0.3);display:inline-block;width:auto;margin-left:auto;margin-right:auto;padding-bottom:6px;}
-.plats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
-.plat-card{background:rgba(240,230,200,0.12);border:1px solid var(--gold);padding:14px 12px;cursor:pointer;transition:all 0.2s;text-align:center;border-radius:8px;}
-.plat-card:hover{background:rgba(201,160,32,0.2);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.plat-emoji{font-size:32px;display:block;margin-bottom:6px;}
-.plat-name{font-size:15px;font-weight:bold;color:var(--gold);letter-spacing:1px;}
-.plat-desc{font-size:10px;color:var(--sepia4);margin-top:4px;}
-.ticket-area{background:var(--paper);padding:14px;border:2px dashed var(--sepia2);margin-bottom:20px;min-height:100px;font-family:'Special Elite',cursive;transition:all 0.3s;}
-.ticket-title{font-size:12px;color:var(--red);letter-spacing:3px;border-bottom:1px solid var(--sepia2);margin-bottom:8px;}
-.ticket-content{font-size:13px;color:var(--sepia1);min-height:60px;}
-.ticket-stamp{display:inline-block;background:var(--red);color:var(--paper);font-size:9px;padding:2px 6px;margin-top:8px;transform:rotate(-8deg);font-family:'Rye',cursive;}
-.autre-champ{width:100%;padding:8px;background:var(--paper-dark);border:1px solid var(--gold);margin-top:10px;font-family:inherit;display:none;}
-.valider-btn{background:var(--sepia1);color:var(--gold);border:2px solid var(--gold);font-family:'Rye',cursive;font-size:16px;letter-spacing:4px;padding:12px 20px;width:100%;cursor:pointer;transition:all 0.3s;}
-.valider-btn:hover{background:var(--gold);color:var(--sepia1);}
-.cuisine-animation{text-align:center;padding:20px;background:rgba(0,0,0,0.7);border-radius:8px;margin:15px 0;}
-.cooking-chicken{font-size:54px;display:inline-block;animation:rotateChicken 0.8s linear infinite;}
-@keyframes rotateChicken{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-.steam{font-size:30px;animation:steamRise 1s ease-out infinite;display:inline-block;margin-left:10px;}
-@keyframes steamRise{0%{opacity:0;transform:translateY(10px);}50%{opacity:1;}100%{opacity:0;transform:translateY(-20px);}}
-.countdown-circle{width:80px;height:80px;border-radius:50%;border:4px solid var(--gold);margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:38px;font-family:'Rye',cursive;color:var(--red);}
-.final-message{text-align:center;animation:finalFadeIn 1s;}
-.final-jp{font-size:42px;font-family:'Noto Serif JP',serif;color:#f5e6b0;margin:20px 0;text-shadow:3px 3px 0 #3a2208;}
-.final-message div:not(.final-jp){color:#f5e6b0;font-weight:bold;background:rgba(0,0,0,0.5);display:inline-block;padding:6px 12px;border-radius:8px;margin:10px auto;}
-.final-capture{background:#f0e6c8;border:3px solid #c9a020;padding:18px;margin-top:25px;border-radius:16px;box-shadow:0 0 20px rgba(201,160,32,0.3);}
-.final-capture div:first-child{font-size:32px;margin-bottom:8px;}
-.final-capture div:not(:first-child){color:#2c1a08;font-size:14px;font-family:'Special Elite',cursive;}
-.final-capture div:not(:first-child) a, 
-.final-capture div:not(:first-child) span{color:#2c1a08;font-weight:bold;}
+/* CADEAU MAGIQUE */
+.gift-magic-container{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;z-index:10000;pointer-events:none;transition:background 0.5s ease;}
+.gift-magic-container.active{background:rgba(0,0,0,0.85);pointer-events:auto;}
+.gift-center-box{position:relative;transform:scale(0);transition:transform 0.6s cubic-bezier(0.34,1.2,0.64,1);cursor:pointer;}
+.gift-center-box.bounce{transform:scale(1);animation:giftBounce 0.5s ease-out;}
+@keyframes giftBounce{0%{transform:scale(0.8);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+.magic-gift{position:relative;width:220px;height:200px;margin:0 auto;}
+.magic-gift .gift-lid{position:absolute;top:-28px;left:0;width:100%;height:60px;background:#c9301a;border-radius:16px 16px 0 0;border:3px solid var(--gold);box-shadow:0 -6px 15px rgba(0,0,0,0.3);z-index:2;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);transform-origin:bottom center;}
+.magic-gift .gift-body{position:absolute;bottom:0;left:0;width:100%;height:135px;background:#c9301a;border-radius:0 0 16px 16px;border:3px solid var(--gold);border-top:none;box-shadow:0 10px 25px rgba(0,0,0,0.4);}
+.magic-gift .ribbon-h{position:absolute;top:50%;left:0;width:100%;height:14px;background:var(--gold);transform:translateY(-50%);z-index:3;}
+.magic-gift .ribbon-v{position:absolute;top:0;left:50%;width:14px;height:100%;background:var(--gold);transform:translateX(-50%);z-index:3;}
+.magic-gift .bow{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:50px;height:40px;background:#e8c040;border-radius:50% 50% 40% 40%;z-index:4;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+.magic-gift .bow::before,.magic-gift .bow::after{content:'';position:absolute;width:32px;height:32px;background:#e8c040;border-radius:50%;top:-10px;}
+.magic-gift .bow::before{left:-18px;transform:rotate(-35deg);}
+.magic-gift .bow::after{right:-18px;transform:rotate(35deg);}
+.gift-open .gift-lid{transform:rotateX(-120deg);}
+.open-indicator{text-align:center;margin-top:30px;font-family:'Rye',cursive;font-size:16px;color:var(--gold);letter-spacing:4px;animation:pulseCapture 1.2s infinite;cursor:pointer;}
+.scroll-reveal{background:var(--paper);border:8px double var(--gold);border-radius:20px;padding:35px 40px;margin-top:30px;max-width:450px;text-align:center;box-shadow:0 0 50px rgba(201,160,32,0.4);animation:scrollAppear 0.8s ease;}
+@keyframes scrollAppear{from{opacity:0;transform:translateY(30px) scale(0.9);}to{opacity:1;transform:translateY(0) scale(1);}}
+.scroll-title{font-size:32px;font-family:'Rye',cursive;color:var(--sepia1);margin-bottom:15px;}
+.scroll-message{font-size:18px;color:var(--sepia2);font-style:italic;margin:20px 0;border-top:1px dashed var(--sepia3);border-bottom:1px dashed var(--sepia3);padding:15px 0;line-height:1.8;}
+.capture-magic{background:rgba(139,24,24,0.1);border:2px solid var(--red);border-radius:16px;padding:15px;margin-top:20px;}
+.confetti-magic{position:fixed;pointer-events:none;z-index:10001;}
+
 .conf{position:fixed;pointer-events:none;z-index:9500;animation:confFall linear forwards;border-radius:1px;}
 @keyframes confFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
 @media(max-width:560px){
@@ -212,7 +200,11 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
   .envelope-flap{border-left-width:180px;border-right-width:180px;border-top-width:100px;}
   .answers-grid{grid-template-columns:1fr;}
   .boss-grid{grid-template-columns:1fr 1fr;}
-  .plats-grid{grid-template-columns:1fr;}
+  .magic-gift{width:160px;height:150px;}
+  .magic-gift .gift-lid{height:45px;top:-22px;}
+  .magic-gift .gift-body{height:100px;}
+  .scroll-reveal{padding:25px 20px;}
+  .scroll-title{font-size:24px;}
 }
 </style>
 </head>
@@ -253,7 +245,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
   </div>
 </div>
 
-<!-- VICTORY + MENU JAPONAIS -->
+<!-- VICTORY -->
 <div id="s-victory" class="screen">
   <div class="envelope-wrap">
     <div class="envelope-outer">
@@ -270,14 +262,11 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
             Plus qu'à attendre les resultats, enfin la confirmation ! 🙂‍↕️<br><br>
             Sache que peu importe ce qui nous attend au bout de cette dernière ligne droite, on le surmontera ensemble. 🤘🔫<br>
             Mais d'abord...😆<br><br>
-            Comme je le dirai si bien :<br>
-            Après l'effort le réconfort.🍗🧋 <br><br>
-            You deserve it, Shériffe . 🤠🥹
+            Une petite surprise t'attend !🙈<br><br>
           </div>
           <div class="letter-sig">LYP 💛</div>
         </div>
-        <!-- MENU JAPONAIS sera injecté ici après ouverture -->
-        <div id="japanese-menu-root"></div>
+        <div id="gift-root"></div>
       </div>
     </div>
   </div>
@@ -285,7 +274,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 
 <script>
 // ══════════════════════════════════════════════════
-//  BOSS DATA (identique à la version fonctionnelle)
+//  BOSS DATA
 // ══════════════════════════════════════════════════
 const BOSSES = [
 { id:0, name:"Analyse", alias:'"La Série Infinie — Revanche"', emoji:"∫", prime:7, date:"Demain", quote:'"Tu croyais m\'avoir neutralisée ? Les séries convergent toujours vers leur vengeance."', defeatPhrase:"Rayon de convergence... nul. Je tombe. Pour de bon cette fois.", noShuffle: true,
@@ -306,62 +295,62 @@ const BOSSES = [
     {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"Après intégration de F'(x), on obtient (pour x > 0) :", a:["F'(x) = π·x","F'(x) = π/(x+1)","F'(x) = π·ln(x)","F'(x) = 2π/x"], ans:1},
     {section:"🔹 Intégrale à paramètre — Calcul de F(x)=∫₀^{π/2} ln(cos²t + x²sin²t) dt", enonce:null, q:"En utilisant F(0) = ∫₀^{π/2} ln(cos²t) dt = −π·ln2 pour déterminer la constante C, on obtient finalement :", a:["F(x) = π·ln(x+1)","F(x) = π·ln((x+1)/2)","F(x) = π·ln(x)","F(x) = π·(x+1)/2"], ans:1}
   ],
-  feedbackMessages:{"bien-high":"WAIT. >16 ?! 😭😭 Partner je savais que t'étais forte mais là tu m'as mis une claque.","bien-mid":"12-16 c'est solide ! Tu vois ? J'avais dit que tu pouvais.","bien-low":"Okay 8-12 c'est correct, surtout en analyse rattrapage.","moyen-high":"Tu dis 'moyen' mais >16 ? Partner t'as un problème de perception de toi-même là 😂","moyen-mid":"Moyen et 12-16... bah c'est une bonne note ça non ?","moyen-low":"C'est pas grave si c'était difficile. 8-12 en analyse rattrapage ça reste honorable.","difficile-high":"Difficile mais >16 ?! Tu vois c'est ça Partner — même quand ça semble impossible pour toi, tu te surpasses.","difficile-mid":"C'était dur, 12-16... mais t'as tenu. C'est ça qui compte.","difficile-low":"Heyy. Respire. C'était dur et c'est okay. <12 c'est pas la fin du monde."}
+  feedbackMessages:{"bien-high":"WAIT. >16 ?! 😭😭","bien-mid":"12-16 c'est solide !","bien-low":"8-12 correct pour analyse.","moyen-high":"Tu dis 'moyen' mais >16 ?","moyen-mid":"12-16 c'est une bonne note.","moyen-low":"8-12 honorable.","difficile-high":"Difficile mais >16 ?!","difficile-mid":"12-16, t'as tenu.","difficile-low":"<12, ce n'est pas la fin."}
 },
-{ id:1, name:"Algèbre", alias:'"Le Démon des Matrices — Revanche"', emoji:"𝔸", prime:6, date:"Jeudi", quote:'"J\'ai diagonalisé ma défaite. Cette fois, c\'est moi qui décompose."', defeatPhrase:"Ma matrice est réduite... par toi.", noShuffle: true,
+{ id:1, name:"Algèbre", alias:'"Le Démon des Matrices — Revanche"', emoji:"𝔸", prime:6, date:"Jeudi", quote:'"J\'ai diagonalisé ma défaite."', defeatPhrase:"Ma matrice est réduite... par toi.", noShuffle: true,
   questions:[
-    {section:"🔹 Intégrales doubles", enonce:null, q:"Calculer ∬_{[0,1]²} xy dxdy.", a:["1/2","1/4","1/8","1"], ans:1},
-    {section:"🔹 Intégrales doubles", enonce:null, q:"∫₀¹ ∫_{x²}^{x} dy dx représente l'aire de quelle région ?", a:["Le carré [0,1]²","La région comprise entre y = x² et y = x (pour x ∈ [0,1])","Le triangle de sommets (0,0),(1,0),(1,1)","La région y ≥ x sur [0,1]²"], ans:1},
-    {section:"🔹 Intégrales doubles", enonce:null, q:"En passant en coordonnées polaires, ∬_{x²+y²≤1, x,y≥0} (x²+y²) dxdy vaut :", a:["π/4","π/8","π/2","1/4"], ans:1},
-    {section:"🔹 Intégrales triples", enonce:null, q:"Le volume de la boule de rayon R calculé par intégrale triple en coordonnées sphériques vaut :", a:["πR³","2πR³/3","4πR³/3","4πR²"], ans:2},
-    {section:"🔹 Intégrales triples", enonce:null, q:"∭_{x²+y²≤1, 0≤z≤1} z dxdydz vaut :", a:["π/4","π/2","π","1/2"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"Avec u = x²+y², v = y/x, l'expression de ∂f/∂x en termes de f_u et f_v est :", a:["2y·f_u + (1/x)·f_v","2x·f_u − (y/x²)·f_v","f_u + f_v","(2x+y)·f_u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"L'expression de ∂f/∂y en termes de f_u et f_v est :", a:["2x·f_u − (y/x²)·f_v","2y·f_u + (1/x)·f_v","f_u − f_v","y·f_u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"On calcule x·f_x + y·f_y. Le résultat en fonction de u et des dérivées de f est :", a:["(x²+y²)·f_u","2(x²+y²)·f_u = 2u·f_u","u·f_v","f_u + f_v"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"L'EDP x·f_x + y·f_y = x²+y² devient, dans les variables (u,v) :", a:["f_u + f_v = u","2u·f_u = u, soit f_u = 1/2","u·f_u = 1","2f_u = 1/u"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"En intégrant f_u = 1/2 par rapport à u (v fixé), on obtient :", a:["f(u,v) = 2u + g(v)","f(u,v) = u/2 + g(v)","f(u,v) = u²/4 + g(v)","f(u,v) = g(v)"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"En revenant aux variables (x,y), la solution générale de l'EDP est :", a:["f(x,y) = x²+y² + h(y/x)","f(x,y) = (x²+y²)/2 + h(y/x)","f(x,y) = (x+y)/2 + h(xy)","f(x,y) = x²y² + h(x)"], ans:1},
-    {section:"🔹 EDP — changement de variable u=x²+y², v=y/x", enonce:null, q:"Vérification avec h = 0 : f(x,y) = (x²+y²)/2. Calculer x·f_x + y·f_y :", a:["x²+y²/2","x+y","x²+y²","(x²+y²)²/4"], ans:2},
-    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null, q:"Dans L²([-1,1]) muni du produit scalaire ⟨f,g⟩ = ∫_{-1}^{1} f(x)g(x)dx, quel est ⟨1, x⟩ ?", a:["1","2","0","1/3"], ans:2},
-    {section:"🔹 Orthonormalisation de Gram-Schmidt", enonce:null, q:"Le procédé de Gram-Schmidt, appliqué à une famille libre, permet de construire :", a:["Une base quelconque du même espace","Une base orthonormée (vecteurs deux à deux orthogonaux, de norme 1)","Une base propre d'un opérateur","Une base de dimension inférieure"], ans:1}
+    {section:"🔹 Intégrales doubles", enonce:null, q:"∬_{[0,1]²} xy dxdy = ?", a:["1/2","1/4","1/8","1"], ans:1},
+    {section:"🔹 Intégrales doubles", enonce:null, q:"∫₀¹∫_{x²}^{x} dy dx représente ?", a:["Carré [0,1]²","Région entre y=x² et y=x","Triangle","y≥x"], ans:1},
+    {section:"🔹 Intégrales doubles", enonce:null, q:"En polaires, ∬_{x²+y²≤1, x,y≥0} (x²+y²) dxdy = ?", a:["π/4","π/8","π/2","1/4"], ans:1},
+    {section:"🔹 Intégrales triples", enonce:null, q:"Volume boule R = ?", a:["πR³","2πR³/3","4πR³/3","4πR²"], ans:2},
+    {section:"🔹 Intégrales triples", enonce:null, q:"∭_{x²+y²≤1, 0≤z≤1} z dxdydz = ?", a:["π/4","π/2","π","1/2"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"Avec u=x²+y², v=y/x, ∂f/∂x = ?", a:["2x f_u − (y/x²) f_v","2y f_u + (1/x) f_v","f_u + f_v","(2x+y) f_u"], ans:0},
+    {section:"🔹 EDP", enonce:null, q:"∂f/∂y = ?", a:["2x f_u − (y/x²) f_v","2y f_u + (1/x) f_v","f_u − f_v","y f_u"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"x f_x + y f_y = ?", a:["(x²+y²) f_u","2(x²+y²) f_u","u f_v","f_u+f_v"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"L'EDP devient :", a:["f_u+f_v=u","2u f_u = u → f_u=1/2","u f_u=1","2f_u=1/u"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"Intégration : f(u,v) = ?", a:["2u+g(v)","u/2+g(v)","u²/4+g(v)","g(v)"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"Solution générale f(x,y) = ?", a:["(x²+y²)+h(y/x)","(x²+y²)/2+h(y/x)","(x+y)/2+h(xy)","x²y²+h(x)"], ans:1},
+    {section:"🔹 EDP", enonce:null, q:"Vérif avec h=0 : x f_x + y f_y = ?", a:["x²+y²/2","x+y","x²+y²","(x²+y²)²/4"], ans:2},
+    {section:"🔹 Gram-Schmidt", enonce:null, q:"⟨1,x⟩ sur [-1,1] = ?", a:["1","2","0","1/3"], ans:2},
+    {section:"🔹 Gram-Schmidt", enonce:null, q:"Gram-Schmidt permet de construire :", a:["Base quelconque","Base orthonormée","Base propre","Base de dim inférieure"], ans:1}
   ],
-  feedbackMessages:{"bien-high":"Partner >16 en algèbre rattrapage 😭. Les matrices te respectent maintenant.","bien-mid":"12-16 en algèbre c'est bien géré !","bien-low":"8-12, c'est passé. C'est l'essentiel.","moyen-high":"T'appelles ça 'moyen' et c'est >16 ?","moyen-mid":"Moyen pour toi = 12-16 pour les autres.","moyen-low":"C'était compliqué mais 8-12 ça passe.","difficile-high":"Difficile et >16 quand même. Voilà qui tu es.","difficile-mid":"C'était dur, 12-16, et tu t'en sors quand même.","difficile-low":"C'était hard. C'est okay. <12 ça arrive."}
+  feedbackMessages:{"bien-high":">16 algèbre !","bien-mid":"12-16 bien géré","bien-low":"8-12 passé","moyen-high":"'moyen' >16 ?","moyen-mid":"12-16 bien","moyen-low":"8-12 ça passe","difficile-high":">16 en difficile !","difficile-mid":"12-16, t'as tenu","difficile-low":"<12 ça arrive"}
 },
-{ id:2, name:"Méca", alias:'"Le Tyran Thermique — Revanche"', emoji:"⚙️", prime:5, date:"Jeudi", quote:'"Les cycles thermodynamiques m\'ont rendu plus fort."', defeatPhrase:"L'équilibre thermique final m'a eu.", noShuffle: true,
+{ id:2, name:"Méca", alias:'"Le Tyran Thermique"', emoji:"⚙️", prime:5, date:"Jeudi", quote:'"Les cycles m\'ont rendu plus fort."', defeatPhrase:"L'équilibre thermique m'a eu.", noShuffle: true,
   questions:[
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Cycle</div>Une mole de gaz parfait : P₀ = 2×10⁵ Pa, V₀ = 14 L. ① Détente isobare double volume ② Compression isotherme retour V₀ ③ Refroidissement isochore retour", q:"① Détente isobare : le volume passe de V₀ à V₁. Quelle est la valeur de V₁ ?", a:["7 L","14 L","21 L","28 L"], ans:3},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Après la détente isobare, la température T₁ vaut (loi des gaz parfaits) :", a:["T₀/2","T₀","2T₀","4T₀"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"② La compression isotherme ramène le volume de 2V₀ à V₀. Durant cette transformation, la température est :", a:["T₀","T₁ = 2T₀ (constante tout au long)","(T₀ + T₁)/2","Variable"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Après la compression isotherme, la pression P₂ vaut :", a:["P₀/2","P₀","2P₀","4P₀"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail de la détente isobare (W = P·ΔV) vaut :", a:["−P₀V₀","P₀V₀","P₀V₀/2","2P₀V₀"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail de la compression isotherme reçu par le gaz vaut :", a:["nRT₀·ln2","−nRT₁·ln2","nRT₁·ln2","−nRT₀/2"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Le travail total du cycle W_cycle = W₁ + W₂ + W₃ (W₃ = 0) est :", a:["0","P₀V₀ − nRT₁·ln2","P₀V₀ + nRT₀·ln2","2P₀V₀"], ans:1},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Sur un cycle complet, le premier principe donne ΔU = 0. Donc la chaleur échangée Q_total vaut :", a:["0","W_total","−W_total","2W_total"], ans:2},
-    {section:"🔹 Cycle thermodynamique — Gaz parfait", enonce:null, q:"Dans un diagramme (P,V), une transformation isochore (volume constant) se représente par :", a:["Une courbe hyperbolique","Une droite horizontale","Une droite verticale","Une parabole"], ans:2},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Changements d'état</div>4 kg glace -27°C dans 15 L eau 100°C. c_glace=2100, c_eau=4185, L_fusion=334000 J/kg", q:"Q₁ = énergie pour chauffer 4 kg de glace de −27°C à 0°C. Q₁ = m·c_glace·ΔT = ?", a:["113400 J","226800 J","453600 J","56700 J"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"Q₂ = énergie pour faire fondre totalement 4 kg de glace à 0°C. Q₂ = m·L_fusion = ?", a:["334000 J","668000 J","1336000 J","83500 J"], ans:2},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"Q₃ = énergie cédée par 15 kg d'eau en refroidissant de 100°C à 0°C. Q₃ = m_eau·c_eau·100 = ?", a:["418500 J","6277500 J","4185000 J","627750 J"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"L'eau chaude (Q₃ ≈ 6,28 MJ) doit fournir Q₁ + Q₂ ≈ 1,56 MJ pour fondre toute la glace. L'eau chaude est-elle suffisante ?", a:["Non, il manque","Oui, Q₃ >> Q₁+Q₂, toute la glace fond","On ne peut pas conclure","Juste suffisante"], ans:1},
-    {section:"🔹 Changements d'état — Glace et eau", enonce:null, q:"À l'équilibre (toute la glace fondue), la température T_eq vérifie l'équation de bilan. T_eq ≈ :", a:["0°C","20°C","59,3°C","100°C"], ans:2}
+    {section:"🔹 Cycle", enonce:"<div class='enonce-title'>📋 ÉNONCÉ — Cycle</div>P₀=2×10⁵ Pa, V₀=14L. ① Isobare double volume ② Isotherme retour V₀ ③ Isochore retour", q:"V₁ après isobare ?", a:["7L","14L","21L","28L"], ans:3},
+    {section:"🔹 Cycle", enonce:null, q:"T₁ après isobare ?", a:["T₀/2","T₀","2T₀","4T₀"], ans:2},
+    {section:"🔹 Cycle", enonce:null, q:"Température de l'isotherme ?", a:["T₀","T₁","(T₀+T₁)/2","variable"], ans:1},
+    {section:"🔹 Cycle", enonce:null, q:"P₂ après isotherme ?", a:["P₀/2","P₀","2P₀","4P₀"], ans:2},
+    {section:"🔹 Cycle", enonce:null, q:"Travail isobare ?", a:["-P₀V₀","P₀V₀","P₀V₀/2","2P₀V₀"], ans:1},
+    {section:"🔹 Cycle", enonce:null, q:"Travail isotherme ?", a:["nRT₀·ln2","-nRT₁·ln2","nRT₁·ln2","-nRT₀/2"], ans:1},
+    {section:"🔹 Cycle", enonce:null, q:"Travail total ?", a:["0","P₀V₀ - nRT₁·ln2","P₀V₀ + nRT₀·ln2","2P₀V₀"], ans:1},
+    {section:"🔹 Cycle", enonce:null, q:"Q_total sur cycle = ?", a:["0","W_total","-W_total","2W_total"], ans:2},
+    {section:"🔹 Cycle", enonce:null, q:"Isochore dans (P,V) ?", a:["hyperbole","horizontale","verticale","parabole"], ans:2},
+    {section:"🔹 Changements état", enonce:"<div class='enonce-title'>📋 Glace / Eau</div>4kg glace -27°C dans 15L eau 100°C", q:"Q₁ chauffer glace ?", a:["113400J","226800J","453600J","56700J"], ans:1},
+    {section:"🔹 Changements état", enonce:null, q:"Q₂ fusion totale ?", a:["334000J","668000J","1336000J","83500J"], ans:2},
+    {section:"🔹 Changements état", enonce:null, q:"Q₃ eau 100→0°C ?", a:["418500J","6277500J","4185000J","627750J"], ans:1},
+    {section:"🔹 Changements état", enonce:null, q:"Eau chaude suffit ?", a:["Non","Oui (Q₃ >> Q₁+Q₂)","On ne sait pas","Juste suffisant"], ans:1},
+    {section:"🔹 Changements état", enonce:null, q:"T_eq finale ?", a:["0°C","20°C","59,3°C","100°C"], ans:2}
   ],
-  feedbackMessages:{"bien-high":"T'as calculé des cycles ET des changements d'état, et t'as >16 ?","bien-mid":"12-16 sur un sujet pareil c'est vraiment bien.","bien-low":"8-12 et c'était un sujet de thermo compliqué.","moyen-high":"Moyen et >16 ? Désolé mais je te crois pas 😂","moyen-mid":"Moyen + 12-16 = bien joué en réalité.","moyen-low":"Okay c'était mitigé mais 8-12 ça passe.","difficile-high":"C'était dur et >16. Tu sais ce que ça dit sur toi ?","difficile-mid":"Difficile et 12-16. Voilà. T'as résisté.","difficile-low":"C'était vraiment hard. <12 c'est pas une honte."}
+  feedbackMessages:{"bien-high":">16 thermo !","bien-mid":"12-16 très bien","bien-low":"8-12 correct","moyen-high":"'moyen' >16 ?","moyen-mid":"12-16 bien","moyen-low":"8-12 ça passe","difficile-high":">16 difficile !","difficile-mid":"12-16, t'as tenu","difficile-low":"<12, c'est pas grave"}
 },
-{ id:3, name:"Info", alias:'"La Récursion — Revanche Finale"', emoji:"💻", prime:4, date:"Vendredi", quote:'"J\'ai relu le corrigé. Je connais mes erreurs."', defeatPhrase:"free(this); — Je me libère.", noShuffle: true,
+{ id:3, name:"Info", alias:'"La Récursion — Finale"', emoji:"💻", prime:4, date:"Vendredi", quote:'"J\'ai relu le corrigé."', defeatPhrase:"free(this); — Je me libère.", noShuffle: true,
   questions:[
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Qu'est-ce qu'une segmentation fault en C ?", a:["Erreur de compilation","Accès mémoire invalide","Division par zéro","Boucle infinie"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"En C, l'opérateur | est le OU bit à bit. Que vaut 5 | 3 ?", a:["1","2","7","15"], ans:2},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Que déclare int * const p ?", a:["Pointeur vers entier constant","Pointeur constant : l'adresse stockée ne peut pas changer","Entier constant","Pointeur initialisé à NULL"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Que fait le préprocesseur C ?", a:["Compile en assembleur","Traite #include et remplace les macros","Édite les liens","Optimise le code"], ans:1},
-    {section:"🔹 QCM — Concepts C fondamentaux", enonce:null, q:"Quelle est la meilleure structure pour une file (FIFO) ?", a:["Tableau simple","Tableau circulaire (insertion queue, suppression tête)","Pile","Arbre binaire"], ans:1},
-    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null, q:"Dans decomposition(), la boucle for(i = (reste < max ? reste : max); i >= 1; i--) choisit i = min(reste, max). Pourquoi ?", a:["Pour trier","Pour éviter de dépasser la somme et maintenir ordre décroissant","Pour optimiser","Pour accélérer"], ans:1},
-    {section:"🔹 Exercice 1 — Décomposition récursive", enonce:null, q:"Dans decomposition(), le cas terminal reste == 0 : que fait la fonction ?", a:["Retourne -1","Affiche la décomposition et retourne","Alloue mémoire","Recommence"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"ajouterConduite() insère en tête : nv->suivant = liste; return nv; que retourne-t-elle ?", a:["L'ancien premier","Le nouvel élément, nouvelle tête","NULL","Le dernier élément"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"sauvegarder() parcourt la liste et appelle fprintf. Quel format écrit-elle ?", a:["Binaire","CSV (debit,pression,destination)","JSON","XML"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"Dans supprimer(), pourquoi le cas (prec == NULL) est-il traité séparément ?", a:["Libère plus vite","Suppression en tête : pas de prédécesseur","Élément introuvable","Liste à un seul élément"], ans:1},
-    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"triPression() utilise deux boucles imbriquées. Complexité ?", a:["O(n log n)","O(n)","O(n²)","O(1)"], ans:2},
-    {section:"🔹 Exercice 2 — Réseau hydraulique", enonce:null, q:"debitTotal(Conduite *liste) retourne :", a:["Débit maximal","Nombre de conduites","Somme de tous les débits","Débit du premier élément"], ans:2}
+    {section:"🔹 C", enonce:null, q:"Segmentation fault ?", a:["Erreur compilation","Accès mémoire invalide","Division par zéro","Boucle infinie"], ans:1},
+    {section:"🔹 C", enonce:null, q:"5 | 3 = ?", a:["1","2","7","15"], ans:2},
+    {section:"🔹 C", enonce:null, q:"int * const p signifie ?", a:["Pointeur vers entier constant","Pointeur constant (adresse fixe)","Entier constant","Pointeur NULL"], ans:1},
+    {section:"🔹 C", enonce:null, q:"Préprocesseur ?", a:["Compile","Traite #include et macros","Édite liens","Optimise"], ans:1},
+    {section:"🔹 C", enonce:null, q:"Meilleure structure pour file ?", a:["Tableau simple","Tableau circulaire","Pile","Arbre"], ans:1},
+    {section:"🔹 Décomposition", enonce:null, q:"Dans decomposition(), i = min(reste,max) évite ?", a:["Trier","Dépasser somme et ordre décroissant","Optimiser","Accélérer"], ans:1},
+    {section:"🔹 Décomposition", enonce:null, q:"reste==0 : que fait la fonction ?", a:["Retourne -1","Affiche décomposition et retourne","Alloue mémoire","Recommence"], ans:1},
+    {section:"🔹 Listes", enonce:null, q:"ajouterConduite() retourne ?", a:["Ancien premier","Nouvel élément (nouvelle tête)","NULL","Dernier élément"], ans:1},
+    {section:"🔹 Listes", enonce:null, q:"sauvegarder() écrit en ?", a:["Binaire","CSV","JSON","XML"], ans:1},
+    {section:"🔹 Listes", enonce:null, q:"prec==NULL dans supprimer() signifie ?", a:["Libère plus vite","Suppression en tête","Élément introuvable","Liste à 1 élément"], ans:1},
+    {section:"🔹 Listes", enonce:null, q:"triPression() complexité ?", a:["O(n log n)","O(n)","O(n²)","O(1)"], ans:2},
+    {section:"🔹 Listes", enonce:null, q:"debitTotal() retourne ?", a:["Débit max","Nombre conduites","Somme débits","Premier débit"], ans:2}
   ],
-  feedbackMessages:{"bien-high":"Partner. >16 en info rattrapage. T'es incroyable.","bien-mid":"12-16 ! Les pointeurs, les listes chaînées — t'as géré.","bien-low":"8-12 c'est bien. Info c'est technique.","moyen-high":"Moyen et >16 en info 😂 ? T'es forte.","moyen-mid":"12-16 c'est pas moyen, c'est bien.","moyen-low":"C'était mitigé mais 8-12 c'est correct.","difficile-high":"C'était dur et >16. Tu m'épates.","difficile-mid":"Difficile + 12-16. Tu passes toujours.","difficile-low":"C'était hard. <12. T'as pas abandonné. C'est tout."}
+  feedbackMessages:{"bien-high":">16 info !","bien-mid":"12-16, t'as géré","bien-low":"8-12 correct","moyen-high":"'moyen' >16 ?","moyen-mid":"12-16 bien","moyen-low":"8-12 acceptable","difficile-high":">16 en difficile !","difficile-mid":"12-16, t'as tenu","difficile-low":"<12, tu n'as pas abandonné"}
 }];
 
 let bossStates = ['unlocked','locked','locked','locked'];
@@ -389,95 +378,70 @@ function showOv(html){const o=document.getElementById('overlay');o.innerHTML=htm
 function hideOv(){document.getElementById('overlay').style.display='none';}
 function inkSplat(x,y){const el=document.createElement('div');el.className='ink-splat';el.textContent='✒️';el.style.left=(x-20)+'px';el.style.top=(y-20)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),700);}
 function flashFX(red){const fl=document.getElementById('flash');fl.style.background=red?'rgba(139,24,24,0.3)':'rgba(255,255,255,0.45)';fl.style.opacity='1';setTimeout(()=>fl.style.opacity='0',130);}
-function launchConfetti(){const cols=['#c9a020','#e8c040','#8b1818','#c8a060','#f0e6c8','#2c1808'];for(let i=0;i<80;i++){setTimeout(()=>{const c=document.createElement('div');c.className='conf';c.style.cssText=`left:${Math.random()*100}vw;top:-10px;background:${cols[Math.floor(Math.random()*cols.length)]};width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${2.5+Math.random()*3}s;`;document.body.appendChild(c);setTimeout(()=>c.remove(),6000);},i*60);}}
+function launchConfettiMagic(){const cols=['#c9a020','#e8c040','#8b1818','#c8a060','#f0e6c8','#2c1808','#ffd700'];for(let i=0;i<120;i++){setTimeout(()=>{const c=document.createElement('div');c.className='confetti-magic';c.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-10px;background:${cols[Math.floor(Math.random()*cols.length)]};width:${6+Math.random()*10}px;height:${6+Math.random()*10}px;border-radius:${Math.random()>.5?'50%':'2px'};z-index:10001;animation:confFall ${1.5+Math.random()*2}s linear forwards;`;document.body.appendChild(c);setTimeout(()=>c.remove(),4000);},i*40);}}
 function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
 
-// OUVERTURE ENVELOPPE + MENU JAPONAIS
-let menuActive = true;
+// OUVERTURE ENVELOPPE + CADEAU MAGIQUE CENTRÉ
+let giftRevealed = false;
 function openEnvelope(){
   document.getElementById('env-flap').classList.add('open');
   document.getElementById('env-seal').style.display='none';
   document.querySelector('.env-seal-label').style.display='none';
   setTimeout(()=>{
     document.getElementById('letter').style.display='block';
-    launchConfetti();
-    injectJapaneseMenu();
+    launchConfettiMagic();
+    injectMagicGift();
   },800);
 }
-function injectJapaneseMenu(){
-  const root = document.getElementById('japanese-menu-root');
+function injectMagicGift(){
+  const root = document.getElementById('gift-root');
   root.innerHTML = `
-    <div class="japanese-menu-container">
-      <div class="lantern"></div>
-      <div class="menu-title">🍜 Gabriel's Secret Kitchen 🍜</div>
-      <div class="menu-sub">— Le Dernier Duel Culinaire —</div>
-      <div class="plats-grid" id="plats-grid">
-        <div class="plat-card" data-plat="Poulet Agent Double"><span class="plat-emoji">🍗🥷</span><div class="plat-name">Poulet Agent Double</div><div class="plat-desc">Double épices, mission secrète</div></div>
-        <div class="plat-card" data-plat="Poulet Mayo"><span class="plat-emoji">🍗🥚</span><div class="plat-name">Poulet Mayo</div><div class="plat-desc">Onctueux, classique revisité</div></div>
-        <div class="plat-card" data-plat="Poulet Sauce Diabolique"><span class="plat-emoji">🍗🌶️🔥</span><div class="plat-name">Poulet Sauce Diabolique</div><div class="plat-desc">Feu d'enfer, relever le défi</div></div>
-        <div class="plat-card" data-plat="Poulet Sauce Angélique"><span class="plat-emoji">🍗🕊️✨</span><div class="plat-name">Poulet Sauce Angélique</div><div class="plat-desc">Douceur céleste, miel & citron</div></div>
-        <div class="plat-card" data-plat="La Force Tranquille"><span class="plat-emoji">🍗🧘‍♀️🌿</span><div class="plat-name">La Force Tranquille...</div><div class="plat-desc">1, 2 ou 3 ?</div></div>
-        <div class="plat-card" data-plat="Autre"><span class="plat-emoji">✍️📝</span><div class="plat-name">Autre</div><div class="plat-desc">Laisse libre cours à ton envie</div></div>
+    <div style="text-align:center; margin-top:25px;">
+      <div style="font-family:'Rye',cursive; font-size:18px; color: black; letter-spacing:3px; margin-bottom:25px;">🎁 Un petit cadeau pour les avoir tous mis KO 🎁</div>
+      <div class="gift-center-box" id="giftCenter">
+        <div class="magic-gift" id="magicGift">
+          <div class="gift-lid"></div>
+          <div class="gift-body">
+            <div class="ribbon-h"></div>
+            <div class="ribbon-v"></div>
+            <div class="bow"></div>
+          </div>
+        </div>
+        <div class="open-indicator" id="openIndicator">✨ Clique sur le cadeau ✨</div>
       </div>
-      <div class="ticket-area" id="ticket-area"><div class="ticket-title">🧾 TICKET DE COMMANDE</div><div class="ticket-content" id="ticket-content">Aucun plat sélectionné</div><div class="ticket-stamp" style="display:none;">● COMMANDE REÇUE ●</div></div>
-      <input type="text" id="autre-input" class="autre-champ" placeholder="Écris ton plat personnalisé...">
-      <button id="valider-commande" class="valider-btn">🍽️ VALIDER MA COMMANDE 🍽️</button>
-      <div id="commande-animation" style="display:none;"></div>
+      <div id="revealContainer" style="margin-top:20px;"></div>
     </div>
   `;
-  let selectedPlat = null;
-  const platCards = document.querySelectorAll('.plat-card');
-  const ticketContent = document.getElementById('ticket-content');
-  const ticketStamp = document.querySelector('.ticket-stamp');
-  const autreInput = document.getElementById('autre-input');
-  const validerBtn = document.getElementById('valider-commande');
-  platCards.forEach(card=>{
-    card.addEventListener('click',()=>{
-      platCards.forEach(c=>c.style.background='');
-      card.style.background='rgba(201,160,32,0.3)';
-      const plat = card.dataset.plat;
-      selectedPlat = plat;
-      if(plat === 'Autre'){
-        autreInput.style.display='block';
-        ticketContent.innerHTML = 'En attente de ton choix... écris ton plat personnalisé';
-      } else {
-        autreInput.style.display='none';
-        ticketContent.innerHTML = `${plat} ${card.querySelector('.plat-emoji')?.innerHTML||'🍗'}<br>Commande enregistrée.`;
-        ticketStamp.style.display='inline-block';
-      }
-    });
+  const giftCenter = document.getElementById('giftCenter');
+  const magicGift = document.getElementById('magicGift');
+  const openIndicator = document.getElementById('openIndicator');
+  setTimeout(()=>{ giftCenter.classList.add('bounce'); },100);
+  giftCenter.addEventListener('click',()=>{
+    if(giftRevealed) return;
+    giftRevealed = true;
+    magicGift.classList.add('gift-open');
+    openIndicator.style.display = 'none';
+    launchConfettiMagic();
+    launchConfettiMagic();
+    setTimeout(()=>{
+      document.getElementById('revealContainer').innerHTML = `
+        <div class="scroll-reveal">
+          <div class="scroll-title">🎁 ㅤㅤㅤㅤㅤ🎁</div>
+          <div class="scroll-message">
+            🌟 Une surprise t'attend... 🌟<br><br>
+            Rendez-vous très bientôt pour la découvrir.
+          </div>
+          <div class="capture-magic">
+            <div style="font-size:32px; animation:pulseCapture 1.2s infinite;">🙈</div>
+            <div style="font-weight:bold; margin-top:8px;">Quoi de mieux que ton sourire pour rendre cette victoire totale ? 😆</div>
+            <div style="font-size:12px; margin-top:6px;">Ça arrive...⏳</div>
+          </div>
+          <div style="margin-top:15px; font-family:'Rye',cursive; color:var(--gold);">LYP 💛</div>
+        </div>
+      `;
+      launchConfettiMagic();
+    }, 500);
   });
-  validerBtn.addEventListener('click',()=>{
-    if(!selectedPlat && !autreInput.value.trim()){ ticketContent.innerHTML = "❌ Choisis un plat d'abord !"; return; }
-    let finalChoice = selectedPlat;
-    if(selectedPlat === 'Autre' && autreInput.value.trim()) finalChoice = autreInput.value.trim();
-    else if(selectedPlat === 'Autre'){ ticketContent.innerHTML = "✏️ Écris ton plat personnalisé"; return; }
-    const isForceTranquille = (finalChoice === 'La Force Tranquille');
-    // Lancer l'animation de cuisine
-    const container = document.querySelector('.japanese-menu-container');
-    const platGrid = document.getElementById('plats-grid');
-    const ticketArea = document.getElementById('ticket-area');
-    const validerBtnOrig = document.getElementById('valider-commande');
-    const animationDiv = document.getElementById('commande-animation');
-    platGrid.style.display = 'none';
-    ticketArea.style.display = 'none';
-    validerBtnOrig.style.display = 'none';
-    animationDiv.style.display = 'block';
-    animationDiv.innerHTML = `<div class="cuisine-animation"><div class="cooking-chicken">🍗🔥</div><div class="steam">💨💨💨</div><div class="countdown-circle" id="cd-circle">15</div><div style="margin-top:10px;">Le chef prépare ta commande... 🧑‍🍳</div></div>`;
-    let seconds = 15;
-    const cdSpan = document.getElementById('cd-circle');
-    const interval = setInterval(()=>{ seconds--; if(cdSpan) cdSpan.innerText = seconds; if(seconds<=0){ clearInterval(interval); finalizeOrder(finalChoice, isForceTranquille, container); } },1000);
-  });
-}
-function finalizeOrder(choice, isForce, container){
-  let finalMessage = '';
-  if(isForce){
-    finalMessage = `<div class="final-message"><div class="final-jp">🍗 特別な一品 🍗</div><div class="final-jp" style="font-size:28px;">Poulet Yassa parfumé aux épices douces</div><div class="final-jp">✨  chef a choisi pour toi ✨</div></div>`;
-  } else {
-    finalMessage = `<div class="final-message"><div class="final-jp">召し上がれ</div><div class="final-jp" style="font-size:18px; letter-spacing:2px;">(Meshiagare — Bon appétit)</div><div class="final-jp" style="font-size:16px;">ごちそうさまでした</div><div style="margin:15px 0;">🍗 ${choice} — Gabriel valide ta commande 🍗</div><div>Bonne dégustation, Partner. Tu l'as mérité.</div></div>`;
-  }
-  container.innerHTML = finalMessage + `<div class="final-capture"><div style="font-size:22px; animation:pulseCapture 1.2s infinite;">📸</div><div style="font-weight:bold;">Capture d'écran ce message et envoie-le à Gabriel pour qu'il sache que ta commande est prête !</div><div style="font-size:11px; margin-top:8px;">Il t'attend pour partager ce repas. 💛</div></div>`;
-  launchConfetti();
 }
 </script>
 </body>
